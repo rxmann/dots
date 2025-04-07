@@ -1,7 +1,7 @@
 
 {
 	// "layer": "top", // Waybar at top layer
-	"position": "bottom", // Waybar position (top|bottom|left|right)
+		"position": "bottom", // Waybar position (top|bottom|left|right)
 		"height": 5, // Waybar height (to be removed for auto height)
 			     // "width": 1280, // Waybar width
 			     // Choose the order of the modules
@@ -101,7 +101,7 @@
 			// "format-full": "",
 			// "format-icons": ["", "", "", "", ""],
 			"format": " {capacity}% ",
-			
+
 		},
 		"battery#bat2": {
 			"bat": "BAT2"
@@ -112,7 +112,8 @@
 			"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 			"format-linked": "{ifname} (No IP) ",
 			"format-disconnected": "Disconnected ",
-			"format-alt": "{ifname}: {ipaddr}/{cidr}"
+			"format-alt": "{ifname}: {ipaddr}/{cidr}",
+			"on-click": "nmtui"
 		},
 		"pulseaudio": {
 			// "scroll-step": 1, // %, can be a float
