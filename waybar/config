@@ -73,7 +73,7 @@
 			"tooltip": false
 		},
 		"memory": {
-			"format": " {}%"
+			"format": "  {}%"
 		},
 		"temperature": {
 			// "thermal-zone": 2,
@@ -100,7 +100,7 @@
 			// "format-good": "", // An empty format will hide the module
 			// "format-full": "",
 			// "format-icons": ["", "", "", "", ""],
-			"format": " {capacity}% ",
+			"format": "  {capacity}% ",
 
 		},
 		"battery#bat2": {
@@ -108,7 +108,7 @@
 		},
 		"network": {
 			// "interface": "wlp2*", // (Optional) To force the use of this interface
-			"format-wifi": " {essid} ({signalStrength}%)",
+			"format-wifi": "   {essid} ({signalStrength}%)",
 			"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
 			"format-linked": "{ifname} (No IP) ",
 			"format-disconnected": "Disconnected ",
@@ -117,7 +117,7 @@
 		},
 		"pulseaudio": {
 			// "scroll-step": 1, // %, can be a float
-			"format": " {volume}%  {format_source}",
+			"format": "   {volume}%  {format_source}",
 			"format-bluetooth": "{volume}%  {format_source}",
 			"format-bluetooth-muted": " {format_source}",
 			"format-muted": " {format_source}",
