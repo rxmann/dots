@@ -13,6 +13,10 @@ return {
         -- JavaScript / TypeScript
         null_ls.builtins.formatting.prettier,
         require("none-ls.diagnostics.eslint_d")
+
+        -- Prisma
+        
+
         -- JAVA
         -- null_ls.builtins.formatting.google_java_format,
         -- null_ls.builtins.diagnostics.checkstyle.with({
