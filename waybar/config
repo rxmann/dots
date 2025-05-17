@@ -87,23 +87,36 @@
 			// "device": "acpi_video1",
 			"format": "{percent}% ",
 			"format-icons": ["", ""]
-		},
-		"battery": {
+    },
+    // "battery": {
+    //   "states": {
+    //     "good": 95,
+    //     "warning": 30,
+    //     "critical": 15
+    //   },
+    //   "format": "{capacity}%",
+    //   "format-charging": "  {capacity}%",
+    //   "format-plugged": "  {capacity}%",
+    //   "format-full": " Full",
+    //   "format-icons": ["", "", "", "", ""],
+    //   "tooltip": true
+    // },
+	"battery": {
 			"states": {
-				"good": 95,
+				"good": 90,
 				"warning": 30,
 				"critical": 15
 			},
-			// "format-charging": "{capacity}%",
-			// "format-plugged": " {capacity}%",
+			"format-good": "  {capacity}% ",
+			"format-charging": "󱐋 {capacity}%",
+			"format-plugged": " {capacity}%",
 			// "format-alt": "{time} ",
 			// "format-good": "", // An empty format will hide the module
 			// "format-full": "",
-			// "format-icons": ["", "", "", "", ""],
-			"format": "  {capacity}% ",
-
+			"format-icons": ["", "", "", "", ""],
+      "tooltip": true
 		},
-		"battery#bat2": {
+    "battery#bat2": {
 			"bat": "BAT2"
 		},
 		"network": {
