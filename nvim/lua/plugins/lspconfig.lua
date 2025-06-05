@@ -11,7 +11,7 @@ return {
       require("mason-lspconfig").setup({
         ensure_installed = {
           "lua_ls",
-          -- "jdtls",
+          "jdtls",
           "ts_ls",
           "prismals"
         }
@@ -26,7 +26,7 @@ return {
       lspconfig.lua_ls.setup({})
       lspconfig.ts_ls.setup({})
       lspconfig.prismals.setup({})
-      -- lspconfig.jdtls.setup({})
+      lspconfig.jdtls.setup({})
 
       vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
       vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})

@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.g.background = "light"
+vim.g.background = "dark"
 
 vim.opt.swapfile = false
 
