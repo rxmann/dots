@@ -1,17 +1,17 @@
 * {
-    font: "Figtree 13";
+    font: "JetBrainsMono Nerd Font 12";
     g-spacing: 10px;
     g-margin: 0;
-    b-color: #000000FF;
+    b-color: #13131d;
     fg-color: #FFFFFFFF;
     fgp-color: #888888FF;
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: #FFFFFFFF;
-    hlt-color: #000000FF;
+    hl-color: rgba(0, 0, 8, 0.7);
+    hlt-color: #1793d1;
     alt-color: #111111FF;
-    wbg-color: #000000CC;
-    w-border: 2px solid;
+    wbg-color: #13131d;
+    w-border: 1px solid;
     w-border-color: #FFFFFFFF;
     w-padding: 12px;
 }
@@ -19,13 +19,13 @@
 configuration {
     modi: "drun";
     show-icons: true;
-    display-drun: "";
+    display-drun: "  ";
 }
 
 listview {
     columns: 1;
-    lines: 7;
-    fixed-height: true;
+    lines: 8;
+    fixed-height: false;
     fixed-columns: true;
     cycle: false;
     scrollbar: false;
@@ -34,7 +34,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 450px;
+    width: 550px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
@@ -81,8 +81,8 @@ element normal.normal {
 }
 
 element alternate.normal {
-	background-color: @alt-color;
-	text-color: @fg-color;
+    background-color: transparent;
+    text-color: @fg-color;
 }
 
 element selected.active {
