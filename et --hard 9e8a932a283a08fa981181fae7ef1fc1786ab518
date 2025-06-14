@@ -1,0 +1,119 @@
+[33mcommit 026408c3babe3a9fc537961b4ae3369bd59fc3e7[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sat Jun 14 10:40:54 2025 +0545
+
+    fix sh8
+
+[33mcommit 9e8a932a283a08fa981181fae7ef1fc1786ab518[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sat Jun 7 19:25:33 2025 +0545
+
+    fix(): layout x4
+
+[33mcommit b1d2f516cc56e7e3e2d21eb107c325fbf2155596[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sat Jun 7 14:18:32 2025 +0545
+
+    fix(): layout x3
+
+[33mcommit 2e7926c4689a94124bb226db481785b0df487cf4[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sat Jun 7 13:43:16 2025 +0545
+
+    fix(): layout
+
+[33mcommit 50513941bc1097cd2b11e3be4865a2bfa5fccc78[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sat Jun 7 13:13:34 2025 +0545
+
+    fix(): layout
+
+[33mcommit b592246030356f5bba80eeb05320c661051872c2[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Thu Jun 5 19:08:10 2025 +0545
+
+    tmux and nvim fixes
+
+[33mcommit 3236470ed5e1cab38529a4a101bf6de85f291d0c[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Wed Jun 4 13:38:03 2025 +0545
+
+    fix(): monitors fix and updated waybar
+
+[33mcommit a290b5116ac6cea6d1c7ad28b0fc4100c573c69f[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sun May 25 23:46:19 2025 +0545
+
+    color schemes
+
+[33mcommit 14ec10670fb920289b3d32b85d25b1f4d83519b0[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sun May 25 23:45:57 2025 +0545
+
+    color schemes
+
+[33mcommit dd6416e47455b4af578ae49e4d97de966e483094[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sun May 25 22:52:31 2025 +0545
+
+    add keybinds and maps
+
+[33mcommit 198e8a4c10bc9051c3f678217a70d10eb3d0c3b8[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sat May 17 17:39:03 2025 +0545
+
+    checked
+
+[33mcommit b1c81f9cec330d02eef6d9b51da483f4351243a7[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Mon May 12 10:19:10 2025 +0545
+
+    add rofi launcher
+
+[33mcommit f42cd6cc8938c53087ceb858125faee5a2a4fbbf[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Mon May 12 10:17:14 2025 +0545
+
+    add rofi launcher setup
+
+[33mcommit cc720fd62571340d0d2cf122c7a5e37cc920bf24[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sun Apr 13 10:37:27 2025 +0545
+
+    fix check new machine
+
+[33mcommit f91ebd6d4e173cacabc0cac44585f209326acc81[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Wed Apr 9 19:26:16 2025 +0545
+
+    fix(): nvim
+
+[33mcommit 2ccb081b08a478bbcd7c942e1915c7cb6d452929[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Mon Apr 7 19:08:14 2025 +0545
+
+    fix amm ok
+
+[33mcommit 2354f920c854d97108a84e51c964f58041205fff[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Mon Apr 7 18:44:06 2025 +0545
+
+    fix amm
+
+[33mcommit e7a84ccdffcad4a85cdc425bead42135f8ce1bd2[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Thu Mar 27 18:09:01 2025 +0545
+
+    shhh
+
+[33mcommit c6abe18d3b8aa99e57a5411562cda7e685447893[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sun Mar 23 23:37:36 2025 +0545
+
+    swaync hypridle hyprshots hyprlock waybar minimal
+
+[33mcommit 59976ea352b6a45517abcde5bd5552eb25bd18a9[m
+Author: rxmann <k.romann413@gmail.com>
+Date:   Sun Mar 23 20:56:13 2025 +0545
+
+    add navigation shortcuts to hyprland.conf

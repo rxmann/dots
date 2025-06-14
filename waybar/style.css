@@ -1,6 +1,6 @@
 * {
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 window#waybar {
@@ -96,7 +96,7 @@ window#waybar {
 #custom-arch {
     margin-left: 5px;
     padding: 0 10px;
-    font-size: 25px;
+    font-size: 18px;
     transition: color 0.5s;
 }
 #custom-arch:hover {
