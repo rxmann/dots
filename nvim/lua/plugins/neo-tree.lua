@@ -10,7 +10,7 @@ return {
         -- Toggle Neo-tree with Alt+n
         vim.keymap.set("n", "<A-n>", ":Neotree toggle<CR>", { noremap = true, silent = true })
         -- Reveal buffers in a floating window with leader+bf
-        vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", { noremap = true, silent = true })
+        vim.keymap.set("n", "<leader>e", ":Neotree buffers reveal float<CR>", { noremap = true, silent = true })
     end,
 }
 

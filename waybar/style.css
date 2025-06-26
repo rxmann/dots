@@ -1,27 +1,32 @@
 * {
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands", Roboto, Helvetica, Arial, sans-serif;
-    font-size: 12px;
+    font-family:
+        "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands",
+        Roboto, Helvetica, Arial, sans-serif;
 }
 
 window#waybar {
-    background: transparent;
-    color: #c0caf5;
+    /* background: transparent; */
+    background: black;
+    color: #ffffff;
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-size: 12px;
+    font-weight: 900;
 }
-
 
 .modules-left,
 .modules-center,
 .modules-right {
-    background: rgba(0, 0, 8, 0.7);
     /* background: black; */
-    margin: 5px 0px 0px 0px; /* 5, 10 px */
+    margin: 0px 0px 0px 0px;
+    /* 5, 10 px */
     padding: 0 5px;
     border-radius: 15px;
 }
+
 .modules-left {
     padding: 0;
 }
+
 .modules-center {
     padding: 0 10px;
 }
@@ -45,7 +50,7 @@ window#waybar {
 #language,
 #mpd {
     padding: 0 10px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
 }
 
 #clock:hover,
@@ -70,15 +75,9 @@ window#waybar {
 }
 
 #workspaces button {
-    background: transparent;
-    font-family:
-        JetBrainsMono Nerd Font,
-        feather;
-    font-weight: 900;
-    font-size: 10pt;
-    color: #c0caf5;
+    /* color: #c0caf5; */
+    color: white;
     border: none;
-    border-radius: 15px;
 }
 
 #workspaces button.active {
@@ -96,9 +95,10 @@ window#waybar {
 #custom-arch {
     margin-left: 5px;
     padding: 0 10px;
-    font-size: 18px;
+    font-size: 20px;
     transition: color 0.5s;
 }
+
 #custom-arch:hover {
     color: #1793d1;
 }
