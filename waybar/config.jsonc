@@ -1,34 +1,27 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", // Waybar at top layer
-    "position": "top", // Waybar position (top|bottom|left|right)
-    // "height": 2, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 6, // Gaps between modules (4px)
-    // Choose the order of the modules
-    "modules-left": [
-        "custom/arch",
-        "hyprland/workspaces",
-        "tray"
-    ],
-    "modules-center": [
-        // "hyprland/window",
-        "clock"
-    ],
-    "modules-right": [
-        "idle_inhibitor",
-        "pulseaudio",
-        "network",
-        "cpu",
-        "memory",
-        //"temperature",
-        //"hyprland/language",
-        "battery",
-        "battery#bat2"
-    ],
-    //Modules configuration
-
-    "include": [
-		"~/.config/waybar/modules.json"
-	]
+  "layer": "top", // waybar at top layer
+  "position": "top", // waybar position (top|bottom|left|right)
+  // "height": 2, // waybar height (to be removed for auto height)
+  // "width": 1280, // waybar width
+  "spacing": 6, // gaps between modules (4px)
+  // choose the order of the modules
+  "modules-left": ["custom/arch", "hyprland/workspaces", "tray"],
+  "modules-center": [
+    // "hyprland/window",
+    "clock"
+  ],
+  "modules-right": [
+    "idle_inhibitor",
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    //"temperature",
+    //"hyprland/language",
+    "battery",
+    "custom/powerBtn"
+  ],
+  //modules configuration
+  "include": ["~/.config/waybar/modules.json"]
 }
