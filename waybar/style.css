@@ -10,7 +10,7 @@ window#waybar {
     color: #ffffff;
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
     font-size: 12px;
-    font-weight: 900;
+    font-weight: 700;
 }
 
 .modules-left,
@@ -50,7 +50,7 @@ window#waybar {
 #language,
 #mpd {
     padding: 0 10px;
-    /* border-radius: 15px; */
+    border-radius: 15px;
 }
 
 #clock:hover,

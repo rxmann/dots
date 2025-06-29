@@ -6,7 +6,9 @@
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
-        "all-outputs": true,
+        // "all-outputs": false,
+        // "active-only": true,
+        "on-click": "activate",
         "warp-on-scroll": false,
         "format": "{name}: {icon}",
         "format-icons": {
@@ -16,9 +18,12 @@
             "4": " ",
             "5": " ",
             "urgent": "",
-            // "active": "",
             "default": ""
         }
+        //"persistent-workspaces": {
+         //   "eDP-1": [ 9, 10 ],
+        //  "HDMI-A-1": [ 1, 2, 3, 4, 5, 6, 7, 8],
+        //}
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -47,7 +52,7 @@
                 ""
             ]
         },
-        "on-click": "sh ~/.config/waybar/rofi-volume.sh"
+        "on-click": "pavucontrol"
     },
     "network": {
         // "format-wifi": "   {essid} ({signalStrength}%)",
