@@ -6,8 +6,6 @@
     },
     "hyprland/workspaces": {
         "disable-scroll": true,
-        // "all-outputs": false,
-        // "active-only": true,
         "on-click": "activate",
         "warp-on-scroll": false,
         "format": "{name}: {icon}",
@@ -20,10 +18,6 @@
             "urgent": "",
             "default": ""
         }
-        //"persistent-workspaces": {
-         //   "eDP-1": [ 9, 10 ],
-        //  "HDMI-A-1": [ 1, 2, 3, 4, 5, 6, 7, 8],
-        //}
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -55,7 +49,6 @@
         "on-click": "pavucontrol"
     },
     "network": {
-        // "format-wifi": "   {essid} ({signalStrength}%)",
         "format-wifi": "  {essid}",
         "format-ethernet": "Ethernet 󰈀 ",
         "tooltip-format": "{ifname} via {gwaddr} ",

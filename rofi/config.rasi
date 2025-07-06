@@ -11,7 +11,7 @@
     hlt-color: #1793d1;
     alt-color: #111111FF;
     wbg-color: #13131d;
-    w-border: 1px solid;
+    w-border: 0px;
     w-border-color: #FFFFFFFF;
     w-padding: 12px;
 }
@@ -25,7 +25,7 @@ configuration {
 listview {
     columns: 1;
     lines: 8;
-    fixed-height: true;
+    fixed-height: false;
     fixed-columns: true;
     cycle: false;
     scrollbar: false;
@@ -34,7 +34,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 550px;
+    // width: 550px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
