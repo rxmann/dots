@@ -1,7 +1,7 @@
 * {
-    font: "JetBrainsMono Nerd Font 12";
-    g-spacing: 10px;
-    g-margin: 0;
+    font: "JetBrainsMono Nerd Font 14";
+    g-spacing: 20px;
+    g-margin: 2;
     b-color: #13131d;
     fg-color: #FFFFFFFF;
     fgp-color: #888888FF;
@@ -20,11 +20,12 @@ configuration {
     modi: "drun";
     show-icons: true;
     display-drun: "  ";
+    icon-size: 44px;
 }
 
 listview {
     columns: 1;
-    lines: 8;
+    lines: 6;
     fixed-height: false;
     fixed-columns: true;
     cycle: false;
@@ -34,7 +35,7 @@ listview {
 
 window {
     transparency: "real";
-    // width: 550px;
+    width: 550px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;

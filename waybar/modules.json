@@ -1,105 +1,131 @@
 {
-    "custom/arch": {
-        "format": "󰣇",
-        "tooltip": true,
-        "tooltip-format": "btw"
-    },
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "on-click": "activate",
-        "warp-on-scroll": false,
-        "format": "{name}: {icon}",
-        "format-icons": {
-            "1": " ",
-            "2": " ",
-            "3": " ",
-            "4": " ",
-            "5": " ",
-            "urgent": "",
-            "default": ""
-        }
-    },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon} {volume}%  {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": " {volume}%",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": [
-                "",
-                "",
-                ""
-            ]
-        },
-        "on-click": "pavucontrol"
-    },
-    "network": {
-        "format-wifi": "  {essid}",
-        "format-ethernet": "Ethernet 󰈀 ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "on-click": "sh ~/.config/waybar/rofi-wifi-menu.sh"
-    },
-    "cpu": {
-        "format": "  {usage}%",
-        "tooltip": true
-    },
-    "memory": {
-        "format": "  {}%",
-        "tooltip": true
-    },
-    "temperature": {
-        "interval": 10,
-        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
-        "critical-threshold": 100,
-        "format-critical": " {temperatureC}",
-        "format": " {temperatureC}°C"
-    },
-    "hyprland/language": {
-        "format": "  {}",
-        "format-en": "EN"
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}  {capacity}%",
-        "format-full": "{icon}  {capacity}%",
-        "format-charging": "  {capacity}%",
-        "format-plugged": "  {capacity}%",
-        "format-alt": "{time}  {icon}",
-        "format-icons": [
-            "",
-            "",
-            "",
-            "",
-            ""
-        ]
-    },
-    "clock": {
-        "format": "{:%I:%M %p} ",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%A, %B %e, %Y}"
-    },
-    "custom/powerBtn": {
-        "format": " ",
-        "on-click": "sh ~/.config/waybar/rofi-power-menu.sh"
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip": true,
+    "tooltip-format": "btw"
+  },
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "on-click": "activate",
+    "warp-on-scroll": false,
+    "format": "{name}",
+    "format-icons": {
+      "1": " ",
+      "2": " ",
+      "3": " ",
+      "4": " ",
+      "5": " ",
+      "urgent": "",
+      "default": ""
     }
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰌵",
+      "deactivated": "󰌶"
+    },
+    "tooltip": true,
+    "tooltip-format": "Idle Inhibitor: {status}"
+  },
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "{icon}",
+    "format-bluetooth-muted": "󰸈",
+    "format-muted": "󰸈",
+    "format-source": "󰍬",
+    "format-source-muted": "󰍭",
+    "format-icons": {
+      "headphone": "󰋋",
+      "hands-free": "󰋋",
+      "headset": "󰋋",
+      "phone": "󰋋",
+      "portable": "󰋋",
+      "car": "󰋋",
+      "default": ["󰕿", "󰖀", "󰕾"]
+    },
+    "on-click": "pavucontrol",
+    "tooltip": true,
+    "tooltip-format": " Volume: {volume}%"
+  },
+  "network": {
+    "format-wifi": "󰤢",
+    "format-ethernet": "󰈀",
+    "format-linked": "󰈀",
+    "format-disconnected": "󰖪",
+    "on-click": "sh ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+    "tooltip": true,
+    "tooltip-format": "{essid}"
+  },
+  "cpu": {
+    "format": "  {usage}%",
+    "tooltip": true,
+    "tooltip-format": "CPU: {usage}%"
+  },
+  "memory": {
+    "format": "  {}%",
+    "tooltip": true,
+    "tooltip-format": "Memory: {}%"
+  },
+  "temperature": {
+    "interval": 10,
+    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+    "critical-threshold": 100,
+    "format-critical": " {temperatureC}",
+    "format": " {temperatureC}°C"
+  },
+  "hyprland/language": {
+    "format": "  {}",
+    "format-en": "EN"
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": "󰂄",
+    "format-plugged": "󰂄",
+    "format-icons": [" ", " ", " ", " ", " "],
+    "tooltip": true,
+    "tooltip-format": "⚡ Battery: {capacity}%",
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/power_profiles.xml",
+    "menu-actions": {
+      "performance": "powerprofilesctl set performance",
+      "balanced": "powerprofilesctl set balanced",
+      "power-saver": "powerprofilesctl set power-saver"
+    }
+  },
+  "clock": {
+    "format": "{:%I:%M %p}",
+    "on-click": "swaync-client -t",
+    "tooltip": true,
+    "tooltip-format": "<big>{calendar}</big>"
+  },
+  "custom/powerBtn": {
+    "format": "󰐥",
+    "tooltip": true,
+    "tooltip-format": "Power Menu",
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "logout": "hyprctl dispatch exit",
+      "hibernate": "systemctl hibernate"
+    }
+  },
+  "custom/powerProfile": {
+    "format": "󰾆",
+    "tooltip": true,
+    "tooltip-format": "Change Power Profile",
+    "menu": "on-click",
+    "menu-file": "~/.config/waybar/power_profiles.xml",
+    "menu-actions": {
+      "performance": "powerprofilesctl set performance",
+      "balanced": "powerprofilesctl set balanced",
+      "power-saver": "powerprofilesctl set power-saver"
+    }
+  }
 }
