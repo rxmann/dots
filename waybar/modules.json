@@ -1,131 +1,142 @@
 {
-  "custom/arch": {
-    "format": "󰣇",
-    "tooltip": true,
-    "tooltip-format": "btw"
-  },
-  "hyprland/workspaces": {
-    "disable-scroll": true,
-    "on-click": "activate",
-    "warp-on-scroll": false,
-    "format": "{name}",
-    "format-icons": {
-      "1": " ",
-      "2": " ",
-      "3": " ",
-      "4": " ",
-      "5": " ",
-      "urgent": "",
-      "default": ""
-    }
-  },
-  "idle_inhibitor": {
-    "format": "{icon}",
-    "format-icons": {
-      "activated": "󰌵",
-      "deactivated": "󰌶"
+    "custom/arch": {
+        "format": "󰣇",
+        "tooltip": true,
+        "tooltip-format": "btw"
     },
-    "tooltip": true,
-    "tooltip-format": "Idle Inhibitor: {status}"
-  },
-  "pulseaudio": {
-    "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "format-bluetooth-muted": "󰸈",
-    "format-muted": "󰸈",
-    "format-source": "󰍬",
-    "format-source-muted": "󰍭",
-    "format-icons": {
-      "headphone": "󰋋",
-      "hands-free": "󰋋",
-      "headset": "󰋋",
-      "phone": "󰋋",
-      "portable": "󰋋",
-      "car": "󰋋",
-      "default": ["󰕿", "󰖀", "󰕾"]
+    "hyprland/workspaces": {
+        "disable-scroll": true,
+        "on-click": "activate",
+        "warp-on-scroll": false,
+        "format": "{name}",
+        "format-icons": {
+            "1": " ",
+            "2": " ",
+            "3": " ",
+            "4": " ",
+            "5": " ",
+            "urgent": "",
+            "default": ""
+        }
     },
-    "on-click": "pavucontrol",
-    "tooltip": true,
-    "tooltip-format": " Volume: {volume}%"
-  },
-  "network": {
-    "format-wifi": "󰤢",
-    "format-ethernet": "󰈀",
-    "format-linked": "󰈀",
-    "format-disconnected": "󰖪",
-    "on-click": "sh ~/.config/waybar/scripts/rofi-wifi-menu.sh",
-    "tooltip": true,
-    "tooltip-format": "{essid}"
-  },
-  "cpu": {
-    "format": "  {usage}%",
-    "tooltip": true,
-    "tooltip-format": "CPU: {usage}%"
-  },
-  "memory": {
-    "format": "  {}%",
-    "tooltip": true,
-    "tooltip-format": "Memory: {}%"
-  },
-  "temperature": {
-    "interval": 10,
-    "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
-    "critical-threshold": 100,
-    "format-critical": " {temperatureC}",
-    "format": " {temperatureC}°C"
-  },
-  "hyprland/language": {
-    "format": "  {}",
-    "format-en": "EN"
-  },
-  "battery": {
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "󰌵",
+            "deactivated": "󰌶"
+        },
+        "tooltip": true,
+        "tooltip-format": "Idle Inhibitor: {status}"
     },
-    "format": "{icon} {capacity}%",
-    "format-charging": "󰂄",
-    "format-plugged": "󰂄",
-    "format-icons": [" ", " ", " ", " ", " "],
-    "tooltip": true,
-    "tooltip-format": "⚡ Battery: {capacity}%",
-    "menu": "on-click-right",
-    "menu-file": "~/.config/waybar/power_profiles.xml",
-    "menu-actions": {
-      "performance": "powerprofilesctl set performance",
-      "balanced": "powerprofilesctl set balanced",
-      "power-saver": "powerprofilesctl set power-saver"
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "󰸈",
+        "format-muted": "󰸈",
+        "format-source": "󰍬",
+        "format-source-muted": "󰍭",
+        "format-icons": {
+            "headphone": "󰋋",
+            "hands-free": "󰋋",
+            "headset": "󰋋",
+            "phone": "󰋋",
+            "portable": "󰋋",
+            "car": "󰋋",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "on-click": "pavucontrol",
+        "tooltip": true,
+        "tooltip-format": " Volume: {volume}%"
+    },
+    "network": {
+        "format-wifi": "󰤢",
+        "format-ethernet": "󰈀",
+        "format-linked": "󰈀",
+        "format-disconnected": "󰖪",
+        "on-click": "sh ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+        "tooltip": true,
+        "tooltip-format": "{essid}"
+    },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+        "tooltip-format": "CPU: {usage}%"
+    },
+    "memory": {
+        "format": "  {}%",
+        "tooltip": true,
+        "tooltip-format": "Memory: {}%"
+    },
+    "temperature": {
+        "interval": 10,
+        "hwmon-path": "/sys/devices/platform/coretemp.0/hwmon/hwmon4/temp1_input",
+        "critical-threshold": 100,
+        "format-critical": " {temperatureC}",
+        "format": " {temperatureC}°C"
+    },
+    "hyprland/language": {
+        "format": "  {}",
+        "format-en": "EN"
+    },
+    "battery": {
+        "states": {
+            "full": 95,
+            "warning": 61,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "󰂄",
+        "format-icons": [
+            " ",
+            " ",
+            " ",
+            " ",
+            " "
+        ],
+        "tooltip": true,
+        "tooltip-format": "⚡ Battery: {capacity}%",
+        "menu": "on-click-right",
+        "menu-file": "~/.config/waybar/power_profiles.xml",
+        "menu-actions": {
+            "performance": "powerprofilesctl set performance",
+            "balanced": "powerprofilesctl set balanced",
+            "power-saver": "powerprofilesctl set power-saver"
+        }
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "on-click": "swaync-client -t",
+        "tooltip": true,
+        "tooltip-format": "<big>{calendar}</big>"
+    },
+    "custom/powerBtn": {
+        "format": "󰐥",
+        "tooltip": true,
+        "tooltip-format": "Power Menu",
+        "menu": "on-click-right",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "shutdown now",
+            "reboot": "reboot",
+            "logout": "hyprctl dispatch exit",
+            "suspend": "systemctl suspend"
+        }
+    },
+    "custom/powerProfile": {
+        "format": "󰾆",
+        "tooltip": true,
+        "tooltip-format": "Change Power Profile",
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/power_profiles.xml",
+        "menu-actions": {
+            "performance": "powerprofilesctl set performance",
+            "balanced": "powerprofilesctl set balanced",
+            "power-saver": "powerprofilesctl set power-saver"
+        }
     }
-  },
-  "clock": {
-    "format": "{:%I:%M %p}",
-    "on-click": "swaync-client -t",
-    "tooltip": true,
-    "tooltip-format": "<big>{calendar}</big>"
-  },
-  "custom/powerBtn": {
-    "format": "󰐥",
-    "tooltip": true,
-    "tooltip-format": "Power Menu",
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/power_menu.xml",
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot",
-      "logout": "hyprctl dispatch exit",
-      "hibernate": "systemctl hibernate"
-    }
-  },
-  "custom/powerProfile": {
-    "format": "󰾆",
-    "tooltip": true,
-    "tooltip-format": "Change Power Profile",
-    "menu": "on-click",
-    "menu-file": "~/.config/waybar/power_profiles.xml",
-    "menu-actions": {
-      "performance": "powerprofilesctl set performance",
-      "balanced": "powerprofilesctl set balanced",
-      "power-saver": "powerprofilesctl set power-saver"
-    }
-  }
 }
