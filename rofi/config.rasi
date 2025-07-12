@@ -2,15 +2,15 @@
     font: "JetBrainsMono Nerd Font 14";
     g-spacing: 20px;
     g-margin: 2;
-    b-color: #13131d;
-    fg-color: #FFFFFFFF;
-    fgp-color: #888888FF;
+    b-color: #0f0f0f;
+    fg-color: #e5e6e5;
+    fgp-color: #707880;
     b-radius: 8px;
     g-padding: 8px;
-    hl-color: rgba(0, 0, 8, 0.7);
-    hlt-color: #1793d1;
-    alt-color: #111111FF;
-    wbg-color: #13131d;
+    hl-color: #353839;
+    hlt-color: #ffffff;
+    alt-color: #353839;
+    wbg-color: #141414;
     w-border: 0px;
     w-border-color: #FFFFFFFF;
     w-padding: 12px;
@@ -25,7 +25,7 @@ configuration {
 
 listview {
     columns: 1;
-    lines: 6;
+    lines: 7;
     fixed-height: false;
     fixed-columns: true;
     cycle: false;
@@ -35,7 +35,7 @@ listview {
 
 window {
     transparency: "real";
-    width: 550px;
+    width: 450px;
     border-radius: @b-radius;
     background-color: @wbg-color;
     border: @w-border;
