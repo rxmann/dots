@@ -37,15 +37,12 @@
         "format-source-muted": "󰍭",
         "format-icons": {
             "headphone": "󰋋",
-            "hands-free": "󰋋",
-            "headset": "󰋋",
-            "phone": "󰋋",
-            "portable": "󰋋",
+            "headset": " ",
             "car": "󰋋",
             "default": [
                 "󰕿",
                 "󰖀",
-                "󰕾"
+                "󰕾 "
             ]
         },
         "on-click": "pavucontrol",
@@ -53,7 +50,7 @@
         "tooltip-format": " Volume: {volume}%"
     },
     "network": {
-        "format-wifi": "󰤢",
+        "format-wifi": " ",
         "format-ethernet": "󰈀",
         "format-linked": "󰈀",
         "format-disconnected": "󰖪",

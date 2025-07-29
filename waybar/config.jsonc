@@ -1,13 +1,13 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top", // waybar at top layer
-  "position": "bottom", // waybar position (top|bottom|left|right)
+  "position": "top", // waybar position (top|bottom|left|right)
   "height": 24, // waybar height (to be removed for auto height)
   // "width": 1280, // waybar width
   "spacing": 2, // gaps between modules (4px)
   // choose the order of the modules
   "modules-left": ["hyprland/workspaces"],
-  "modules-center": [],
+  "modules-center":["clock"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
@@ -16,7 +16,6 @@
     // "memory",
     // "cpu",
     "battery",
-    "clock",
     "custom/powerBtn"
   ],
   //modules configuration

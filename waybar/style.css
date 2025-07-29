@@ -5,7 +5,7 @@
 }
 
 window#waybar {
-    background: #13131d;
+    background: #000000;
     color: #ffffff;
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
     font-size: 12px;
@@ -102,7 +102,7 @@ window#waybar {
 }
 
 #battery.full {
-    color: #4ade80;
+    color: #ffffff;
 }
 
 /* Network colors */
@@ -126,7 +126,7 @@ window#waybar {
 /* Tray styling */
 #tray {
     /* padding: 6px 12px; */
-    background: #447D9B;
+    background: #003300;
 }
 
 #tray>.passive {
@@ -151,6 +151,8 @@ tooltip label {
 }
 
 #clock {
+    font-size: 12px;
+    font-weight: 800;
     background: rgba(255, 255, 255, 0.1);
 }
 
