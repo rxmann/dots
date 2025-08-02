@@ -12,5 +12,9 @@ ln -sf "$DOTS/polybar" "$CONFIG/polybar"
 echo "Linking rofi..."
 ln -sf "$DOTS/rofi" "$CONFIG/rofi"
 
+
+echo "Linking picom..."
+ln -sf "$DOTS/picom" "$CONFIG/picom"
+
 echo "All symlinks created ✅"
 
