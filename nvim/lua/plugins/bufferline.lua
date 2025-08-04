@@ -4,6 +4,7 @@ return {
         "moll/vim-bbye",
         "nvim-tree/nvim-web-devicons",
     },
+
     config = function()
         require("bufferline").setup({
             options = {
@@ -19,8 +20,8 @@ return {
                 right_trunc_marker = "",
                 max_name_length = 30,
                 max_prefix_length = 30, -- prefix used when a buffer is de-duplicated
-                tab_size = 21,
-                diagnostics = false,
+                tab_size = 20,
+                diagnostics = true,
                 diagnostics_update_in_insert = false,
                 color_icons = true,
                 show_buffer_icons = true,

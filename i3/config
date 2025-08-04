@@ -232,7 +232,7 @@ for_window [class=".*"] border none
 bindsym $lessMod+Tab workspace back_and_forth
 
 # wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Downloads/solo.png
+exec_always --no-startup-id feh --bg-scale ~/Downloads/solo.jpg
 
 # mouse
 exec_always --no-startup-id xinput --set-prop 12 "libinput Accel Speed" 0
