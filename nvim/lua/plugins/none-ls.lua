@@ -16,23 +16,24 @@ return {
 				"prettier", -- ts/js formatter
 				"eslint_d", -- ts/js linter
 				"checkstyle",
-				-- 'stylua', -- lua formatter; Already installed via Mason
-				-- 'ruff', -- Python linter and formatter; Already installed via Mason
+                "google-java-format"
 			},
-			-- auto-install configured formatters & linters (with null-ls)
 			automatic_installation = true,
 		})
 
-		local sources = {
+
+        local sources = {
 			formatting.prettier.with({
 				filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
 			}),
 			formatting.stylua,
+            require("none-ls.diagnostics.eslint_d").with({}),
 
-			diagnostics.eslint_d,
+            -- Java formatting
+			formatting.google_java_format,
+
+			-- Java diagnostics
 			diagnostics.checkstyle,
-			-- require("none-ls.formatting.ruff").with({ extra_args = { "--extend-select", "I" } }),
-			-- require("none-ls.formatting.ruff_format"),
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})

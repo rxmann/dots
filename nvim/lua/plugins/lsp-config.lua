@@ -164,7 +164,6 @@ return {
             ts_ls = {},
 			jsonls = {},
 			sqlls = {},
-			terraformls = {},
 			yamlls = {},
 			bashls = {},
 			dockerls = {},
@@ -178,11 +177,6 @@ return {
 
 		-- Ensure the servers and tools above are installed
 		local ensure_installed = vim.tbl_keys(servers or {})
-		vim.list_extend(ensure_installed, {
-			"stylua", -- Used to format Lua code
-			"jdtls",
-			"ts_ls",
-		})
 		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
 		for server, cfg in pairs(servers) do
