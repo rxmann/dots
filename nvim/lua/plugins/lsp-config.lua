@@ -161,7 +161,7 @@ return {
 				},
 			},
 			jdtls = {},
-            ts_ls = {},
+			ts_ls = {},
 			jsonls = {},
 			sqlls = {},
 			yamlls = {},

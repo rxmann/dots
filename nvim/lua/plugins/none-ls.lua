@@ -16,24 +16,24 @@ return {
 				"prettier", -- ts/js formatter
 				"eslint_d", -- ts/js linter
 				"checkstyle",
-                "google-java-format"
+				"google-java-format",
 			},
 			automatic_installation = true,
 		})
-
-
-        local sources = {
+		local sources = {
 			formatting.prettier.with({
 				filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
 			}),
 			formatting.stylua,
-            require("none-ls.diagnostics.eslint_d").with({}),
+			require("none-ls.diagnostics.eslint_d").with({}),
 
-            -- Java formatting
+			-- Java formatting
 			formatting.google_java_format,
 
 			-- Java diagnostics
-			diagnostics.checkstyle,
+			diagnostics.checkstyle.with({
+				extra_args = { "-c", vim.fn.expand("~/.config/checkstyle.xml") },
+			}),
 		}
 
 		local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
