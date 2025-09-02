@@ -13,7 +13,7 @@ return {
         disable_nvimtree_bg = true,
         terminal_colors = true,
         color_overrides = {
-          vscBack = is_transparent and "NONE" or "#181818",
+          vscBack = is_transparent and "NONE" or "#111111" or "#181818",
           vscLineNumber = '#FFFFFF',
         },
         group_overrides = {

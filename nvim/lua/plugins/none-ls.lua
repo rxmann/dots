@@ -22,7 +22,7 @@ return {
 		})
 		local sources = {
 			formatting.prettier.with({
-				filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact" },
+				filetypes = { "javascript", "typescript", "typescriptreact", "javascriptreact"  },
 			}),
 			formatting.stylua,
 			require("none-ls.diagnostics.eslint_d").with({}),
