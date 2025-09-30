@@ -20,7 +20,6 @@ link "$DOTS/i3" "$CONFIG/i3"
 link "$DOTS/polybar" "$CONFIG/polybar"
 link "$DOTS/rofi" "$CONFIG/rofi"
 link "$DOTS/tmux/.tmux.conf" ~/.tmux.conf
-link "$DOTS/nvim" "$CONFIG/nvim"
 
 
 echo "Linking picom..."
