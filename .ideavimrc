@@ -1,0 +1,341 @@
+"lear search highlight
+" LEADER SETUP
+" ============================
+let mapleader=" "
+let maplocalleader="\\"
+
+" ============================
+" BASIC VIM SETTINGS
+" ============================
+
+" sync the Vim clipboard with the OS clipboard
+set clipboard^=unnamed,unnamedplus
+
+" jump between angled brackets
+set matchpairs+=<:>
+
+" smart line joining
+set ideajoin
+
+" enable surround (ys, cs, ds)
+set surround
+
+" enable which-key
+set which-key
+
+" disable the default Vim timeout
+set notimeout
+
+" increase the timeoutlen (default is 1000ms)
+set timeoutlen=5000
+
+" ============================
+" SEARCH SETTINGS
+" ============================
+
+" highlight search results
+set hlsearch
+
+" case insensitive search
+set ignorecase
+
+" enable case-sensitive search when uppercase letter is searched
+set smartcase
+
+" search while typing
+set incsearch
+
+" remove search highlight
+nnoremap <Esc> :nohlsearch<cr>
+
+" ============================
+" CUSTOM KEY REMAPPINGS
+" ============================
+
+" move to the next character occurrence
+noremap . ;
+
+" redo
+noremap U <C-r>
+
+" make black whole register (on delete buffer no copy)
+noremap \ "_
+
+" paste the buffer without overriding the default register
+xnoremap p P
+
+" ============================
+" CONFIG MANAGEMENT
+" ============================
+
+" open config
+nnoremap <leader>cc :edit ~/.ideavimrc<cr>
+
+" source config
+nnoremap <leader>cs :source ~/.ideavimrc<cr>:nohlsearch<cr>
+
+" ============================
+" WINDOW/SPLIT NAVIGATION
+" ============================
+
+" go to the left split
+nnoremap <C-A-h> <C-w>h
+
+" go to the right split
+nnoremap <C-A-l> <C-w>l
+
+" go to the upper split
+nnoremap <C-A-k> <C-w>k
+
+" go to the lower split
+nnoremap <C-A-j> <C-w>j
+
+
+map <C-A-O> <Action>(MoveEditorToOppositeTabGroup)
+
+" ============================
+" WINDOW/SPLIT MANAGEMENT
+" ============================
+
+" split horizontally
+map <leader>J <Action>(SplitHorizontally)
+
+" split vertically
+map <leader>L <Action>(SplitVertically)
+
+" unsplit
+map <leader>ww <Action>(Unsplit)
+
+" unsplit all
+map <leader>wa <Action>(UnsplitAll)
+
+" ============================
+" BUFFER MANAGEMENT
+" ============================
+
+" delete buffers to the right
+map <leader>br <Action>(CloseAllToTheRight)
+
+" delete buffers to the left
+map <leader>bl <Action>(CloseAllToTheLeft)
+
+" buffer (tab) navigation with Shift+h/l
+nnoremap H :action PreviousTab<CR>
+nnoremap L :action NextTab<CR>
+
+" recent files
+map <leader>bb <Action>(RecentFiles)
+
+" save buffer
+map <C-s> <Action>(SaveDocument)
+imap <C-s> <Action>(SaveDocument<>)<Esc>
+
+" ============================
+" SEARCH FILES/SYMBOLS
+" ============================
+
+" search files
+map <leader>sf <Action>(GotoFile)
+map <A-p> <Action>(GotoFile)
+
+" search classes
+map <leader>sc <Action>(GotoClass)
+
+" search symbols
+map <leader>ss <Action>(GotoSymbol)
+
+" search text
+map <leader>sg <Action>(TextSearchAction)
+
+" search actions
+map <A-S-p> <Action>(GotoAction)
+
+" ============================
+" FIND/REPLACE
+" ============================
+
+" find
+map <C-f> <Action>(Find)
+
+" find and replace
+map <C-S-F> <Action>(Replace)
+
+" global search
+map <leader>/ <Action>(FindInPath)
+map <leader>ff <Action>(FindInPath)
+
+" global replace
+map <leader>fr <Action>(ReplaceInPath)
+
+" ============================
+" LSP NAVIGATION
+" ============================
+
+" go to declaration
+map gd <Action>(GotoDeclaration)
+
+" go to type declaration
+map gy <Action>(GotoTypeDeclaration)
+
+" go to implementation
+map gi <Action>(GotoImplementation)
+
+" go to line
+map gl <Action>(GotoLine)
+
+" go to super method
+map gm <Action>(GotoSuperMethod)
+
+" go to reference
+map gr <Action>(GotoReference)
+
+" show usages
+map <leader>uu <Action>(ShowUsages)
+
+" find usages
+map <leader>ug <Action>(FindUsages)
+
+" view source
+map <leader>vs <Action>(ViewSource)
+
+" quick implementations
+map <leader>im <Action>(QuickImplementations)
+
+" quick type definition
+map <leader>td <Action>(QuickTypeDefinition)
+
+" expression type info
+map <leader>ti <Action>(ExpressionTypeInfo)
+
+" show hover info
+map <S-K> <Action>(ShowHoverInfo)
+
+" file structure popup
+map <leader>oo <Action>(FileStructurePopup)
+
+" show intention actions
+map <leader>ca <Action>(ShowIntentionActions)
+
+" ============================
+" ERROR NAVIGATION
+" ============================
+
+" go to next error
+map ]e <Action>(GotoNextError)
+
+" go to previous error
+map [e <Action>(GotoPreviousError)
+
+" jump to last change
+map <leader>lc <Action>(JumpToLastChange)
+
+" ============================
+" METHOD NAVIGATION
+" ============================
+
+" method up
+map <A-[> <Action>(MethodUp)
+
+" method down
+map <A-]> <Action>(MethodDown)
+
+" ============================
+" CODE REFACTORING
+" ============================
+
+" rename element
+map <leader>cr <Action>(RenameElement)
+
+" extract method
+map <leader>rm <Action>(ExtractMethod)
+
+" introduce variable
+map <leader>rv <Action>(IntroduceVariable)
+
+" introduce field
+map <leader>rf <Action>(IntroduceField)
+
+" change signature
+map <leader>rs <Action>(ChangeSignature)
+
+" refactorings quick list
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+
+" surround with
+map <leader>sw <Action>(SurroundWith)
+
+" ============================
+" CODE FORMATTING
+" ============================
+
+" reformat code
+map <A-S-F> <Action>(ReformatCode)
+
+" optimize imports
+map <A-S-O> <Action>(OptimizeImports)
+
+" rearrange code
+map <A-S-R> <Action>(RearrangeCode)
+
+" ============================
+" CODE GENERATION
+" ============================
+
+" generate
+map <S-space> <Action>(Generate)
+
+" complete statement
+map <C-[> <Action>(EditorCompleteStatement)
+
+" ============================
+" COMMENTS
+" ============================
+
+" comment toggle line
+nnoremap gcc :action CommentByLineComment<CR>
+
+" comment toggle visual
+vnoremap gc :action CommentByLineComment<CR>
+
+" ============================
+" MOVE LINES
+" ============================
+
+" move line down
+nnoremap <A-i> :action MoveLineDown<CR>
+
+" move line up
+nnoremap <A-o> :action MoveLineUp<CR>
+
+" move statement down
+vnoremap <A-i> :action MoveStatementDown<CR>
+
+" move statement up
+vnoremap <A-o> :action MoveStatementUp<CR>
+
+
+" ============================
+" VISUAL MODE
+" ============================
+
+" better indent (maintain selection)
+vnoremap > >gv
+vnoremap < <gv
+
+vnoremap <C-S-CR> <Action>(Console.Jdbc.Execute)
+
+" ============================
+" IDE NAVIGATION
+" ============================
+
+" navigate IDE popups with Ctrl-j/k
+map <C-j> <Action>(EditorDown)
+map <C-k> <Action>(EditorUp)
+
+" Enable the NERDTree extension
+set nerdtree
+
+" Map Alt+n to toggle the tree (using the NERDTree command)
+nnoremap <M-n> :NERDTreeToggle<CR>
+" Map Alt+n to find the current file in the tree (optional but handy)
+nnoremap <M-f> :NERDTreeFind<CR> toggle project trelear search highlight
