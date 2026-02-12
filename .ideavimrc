@@ -148,7 +148,7 @@ map <leader>ss <Action>(GotoSymbol)
 map <leader>sg <Action>(TextSearchAction)
 
 " search actions
-map <A-S-p> <Action>(GotoAction)
+map <M-S-p> <Action>(GotoAction)
 
 " ============================
 " FIND/REPLACE
@@ -216,6 +216,10 @@ map <leader>oo <Action>(FileStructurePopup)
 " show intention actions
 map <leader>ca <Action>(ShowIntentionActions)
 
+
+nnoremap <C-k> :action EditorShrinkWordSelection<CR>
+vnoremap <C-k> :action EditorShrinkWordSelection<CR>
+
 " ============================
 " ERROR NAVIGATION
 " ============================
@@ -262,7 +266,10 @@ map <leader>rs <Action>(ChangeSignature)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 
 " surround with
-map <leader>sw <Action>(SurroundWith)
+map <leader>ww <Action>(SurroundWith)
+
+" soft wrap
+map <leader>sw <Action>(EditorToggleUseSoftWraps)
 
 " ============================
 " CODE FORMATTING
@@ -302,16 +309,16 @@ vnoremap gc :action CommentByLineComment<CR>
 " ============================
 
 " move line down
-nnoremap <A-i> :action MoveLineDown<CR>
+nnoremap <A-j> :action MoveLineDown<CR>
 
 " move line up
-nnoremap <A-o> :action MoveLineUp<CR>
+nnoremap <A-k> :action MoveLineUp<CR>
 
 " move statement down
-vnoremap <A-i> :action MoveStatementDown<CR>
+vnoremap <A-j> :action MoveStatementDown<CR>
 
 " move statement up
-vnoremap <A-o> :action MoveStatementUp<CR>
+vnoremap <A-k> :action MoveStatementUp<CR>
 
 
 " ============================
