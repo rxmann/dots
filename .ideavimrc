@@ -329,7 +329,7 @@ vnoremap <A-k> :action MoveStatementUp<CR>
 vnoremap > >gv
 vnoremap < <gv
 
-vnoremap <C-S-CR> <Action>(Console.Jdbc.Execute)
+map <leader>ee <Action>(Console.Jdbc.Execute)
 
 " ============================
 " IDE NAVIGATION
