@@ -344,4 +344,4 @@ set nerdtree
 " Map Alt+n to toggle the tree (using the NERDTree command)
 nnoremap <M-n> :NERDTreeToggle<CR>
 " Map Alt+n to find the current file in the tree (optional but handy)
-nnoremap <M-f> :NERDTreeFind<CR> toggle project trelear search highlight
+nnoremap <M-f> :NERDTreeFind<CR> toggle project tree
