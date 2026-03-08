@@ -1,35 +1,42 @@
 * {
-    font-family:
-        "JetBrainsMono Nerd Font", "Font Awesome 6 Free", "Font Awesome 6 Brands",
-        Roboto, Helvetica, Arial, sans-serif;
+    font-family: "Inter", "Font Awesome 6 Free", "Font Awesome 6 Brands",
+    Roboto, Helvetica, Arial, sans-serif;
 }
 
 window#waybar {
-    background: #000000;
+    background: transparent;
     color: #ffffff;
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+    font-family: "Inter", "Font Awesome 6 Free";
     font-size: 12px;
     font-weight: 500;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modules-left,
-.modules-center,
-.modules-right {
+.modules-center {
     margin: 0;
     padding: 0px;
 }
 
-/* Windows-like workspaces */
+/* Right section: solid dark wrapper — kills transparent gaps between modules */
+.modules-right {
+    margin: 0;
+    padding: 0px;
+    background: #0a0a0a;
+    border-radius: 9999px 0 0 9999px;  /* pill cap on the left entry */
+}
+
+/* ── WORKSPACES (untouched except colors) ─────────────────────────────── */
 #workspaces {
-    /* background: rgba(0, 0, 0, 0.3); */
-    border-radius: 0;
+    /* rounded cap on the right end only — like [      ) */
+    border-radius: 0 9999px 9999px 0;
     margin: 0px 0;
+    background: #0a0a0a;
 }
 
 #workspaces button {
     color: #ffffff;
-    background: transparent;
+    background: transparent;   /* unused = transparent */
     border: none;
     padding: 4px;
     margin: 0px;
@@ -55,7 +62,8 @@ window#waybar {
     color: #ffffff;
 }
 
-/* Right modules styling */
+/* ── RIGHT-SIDE MODULE BASE ───────────────────────────────────────────── */
+/* Fixed constant size for all modules */
 #tray,
 #custom-notification,
 #idle_inhibitor,
@@ -64,16 +72,36 @@ window#waybar {
 #cpu,
 #memory,
 #battery,
-#clock,
 #custom-powerBtn {
-    padding: 8px 10px;
+    padding: 8px 14px;
     margin: 0px;
+    min-width: 48px;
     border-radius: 0px;
-    background: black;
-    transition: all 0.2s ease;
-    font-size: 14px;
+    background: transparent;   /* bg from .modules-right container */
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
+/* Clock: 5× wider than the base 48px = 240px */
+#clock {
+    padding: 4px 24px;
+    margin: 0px;
+    min-width: 160px;
+    border-radius: 50px;
+    background: #0a0a0a;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+#clock:hover {
+    background: #1e1e1e;
+}
+
+/* Hover — all modules */
 #tray:hover,
 #custom-notification:hover,
 #idle_inhibitor:hover,
@@ -82,13 +110,12 @@ window#waybar {
 #cpu:hover,
 #memory:hover,
 #battery:hover,
-#clock:hover,
 #custom-powerBtn:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
 }
 
-/* Battery colors - fixed */
+/* ── BATTERY ──────────────────────────────────────────────────────────── */
 #battery.warning {
     color: #fbbf24;
 }
@@ -105,14 +132,16 @@ window#waybar {
     color: #ffffff;
 }
 
-/* Network colors */
+/* ── NETWORK ──────────────────────────────────────────────────────────── */
 #network.disconnected {
     color: #f87171;
 }
 
-/* Idle inhibitor - fixed colors */
+/* ── IDLE INHIBITOR ───────────────────────────────────────────────────── */
 #idle_inhibitor {
     color: #cccccc;
+    border-radius: 9999px 0 0 9999px;  /* pill cap left */
+    padding-left: 18px;
 }
 
 #idle_inhibitor.activated {
@@ -123,43 +152,37 @@ window#waybar {
     color: #cccccc;
 }
 
-/* Tray styling */
+/* ── TRAY ─────────────────────────────────────────────────────────────── */
 #tray {
-    /* padding: 6px 12px; */
-    background: #003300;
+    background: transparent;
+    min-width: 48px;
 }
 
-#tray>.passive {
+#tray > .passive {
     -gtk-icon-effect: dim;
 }
 
-#tray>.needs-attention {
+#tray > .needs-attention {
     -gtk-icon-effect: highlight;
 }
 
-/* Tooltip styling - fixed for calendar */
+/* ── TOOLTIP ──────────────────────────────────────────────────────────── */
 tooltip {
-    background: rgba(32, 32, 32, 0.95);
+    background: rgba(12, 12, 12, 0.97);
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 0px;
-    font-size: 12px;
+    font-size: 15px;
 }
 
 tooltip label {
     color: #ffffff;
 }
 
-#clock {
-    font-size: 14px;
-    font-weight: 900;
-    background: rgba(255, 255, 255, 0.1);
-}
-
-/* MENU FOR OPTIONS  */
+/* ── CONTEXT MENU ─────────────────────────────────────────────────────── */
 menu {
     border-radius: 0px;
-    background: #13131d;
+    background: #0d0d14;
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1);
     font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
