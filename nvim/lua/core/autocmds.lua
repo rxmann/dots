@@ -1,5 +1,3 @@
--- Custom code snippets for different purposes
-
 -- Prevent LSP from overwriting treesitter color settings
 -- https://github.com/NvChad/NvChad/issues/1907
 vim.hl.priorities.semantic_tokens = 95 -- Or any number lower than 100, treesitter's priority level
@@ -41,4 +39,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
   group = highlight_group,
   pattern = '*',
-})
+)

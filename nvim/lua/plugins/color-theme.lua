@@ -1,48 +1,20 @@
 return {
+  "nickkadutskyi/jb.nvim",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    local transparent = false
 
-	{
-		"Mofiqul/vscode.nvim",
-		config = function()
-			local vscode = require("vscode")
-			local c = require("vscode.colors").get_colors()
-			local is_transparent = false
+    local function apply(t)
+      require("jb").setup({ transparent = t })
+      vim.cmd("colorscheme jb")
+    end
 
-			local function apply_theme()
-				vscode.setup({
-					transparent = is_transparent,
-					italic_comments = true,
-					underline_links = true,
-					disable_nvimtree_bg = true,
-					terminal_colors = true,
-					color_overrides = {
-						vscBack = is_transparent and "NONE" or "#111111" or "#181818",
-						vscLineNumber = "#FFFFFF",
-					},
-					group_overrides = {
-						Cursor = { fg = c.vscDarkBlue, bg = c.vscLightGreen, bold = true },
-					},
-				})
-				vim.cmd([[colorscheme vscode]])
-			end
+    apply(transparent)
 
-			apply_theme()
-
-			-- Toggle command
-			vim.keymap.set("n", "<leader>bg", function()
-				is_transparent = not is_transparent
-				apply_theme()
-			end, { desc = "Toggle VSCode theme transparency" })
-		end,
-	},
-
-	{
-		"nickkadutskyi/jb.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
-		config = function()
-			-- require("jb").setup({transparent = true})
-			vim.cmd("colorscheme jb")
-		end,
-	},
+    vim.keymap.set("n", "<leader>tt", function()
+      transparent = not transparent
+      apply(transparent)
+    end, { desc = "Toggle transparency" })
+  end,
 }

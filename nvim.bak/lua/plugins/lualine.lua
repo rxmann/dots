@@ -22,7 +22,7 @@ return {
 			sections = { "error", "warn" },
 			symbols = { error = " ", warn = " ", info = " ", hint = " " },
 			colored = true,
-			update_in_insert = false,
+			update_in_insert = true,
 			always_visible = false,
 			cond = hide_in_width,
 		}
@@ -67,6 +67,8 @@ return {
 				lualine_z = {},
 			},
 			tabline = {},
+			-- git diff
+			extensions = { "fugitive" },
 		})
 	end,
 }
