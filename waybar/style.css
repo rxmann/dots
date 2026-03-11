@@ -1,65 +1,66 @@
 * {
-    font-family: "Inter", "Font Awesome 6 Free", "Font Awesome 6 Brands",
-    Roboto, Helvetica, Arial, sans-serif;
+  font-family:
+    "Inter", "Font Awesome 6 Free", "Font Awesome 6 Brands", Roboto, Helvetica,
+    Arial, sans-serif;
 }
 
 window#waybar {
-    background: transparent;
-    color: #ffffff;
-    font-family: "Inter", "Font Awesome 6 Free";
-    font-size: 12px;
-    font-weight: 500;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  background: transparent;
+  color: #ffffff;
+  font-family: "Inter", "Font Awesome 6 Free";
+  font-size: 12px;
+  font-weight: 500;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modules-left,
 .modules-center {
-    margin: 0;
-    padding: 0px;
+  margin: 0;
+  padding: 0px;
 }
 
 /* Right section: solid dark wrapper — kills transparent gaps between modules */
 .modules-right {
-    margin: 0;
-    padding: 0px;
-    background: #0a0a0a;
-    border-radius: 9999px 0 0 9999px;  /* pill cap on the left entry */
+  margin: 0;
+  padding: 0px;
+  background: #0a0a0a;
+  border-radius: 9999px 0 0 9999px; /* pill cap on the left entry */
 }
 
 /* ── WORKSPACES (untouched except colors) ─────────────────────────────── */
 #workspaces {
-    /* rounded cap on the right end only — like [      ) */
-    border-radius: 0 9999px 9999px 0;
-    margin: 0px 0;
-    background: #0a0a0a;
+  /* rounded cap on the right end only — like [      ) */
+  border-radius: 0 9999px 9999px 0;
+  margin: 0px 0;
+  background: #0a0a0a;
 }
 
 #workspaces button {
-    color: #ffffff;
-    background: transparent;   /* unused = transparent */
-    border: none;
-    padding: 4px;
-    margin: 0px;
-    border-radius: 0;
-    min-width: 35px;
-    font-weight: 700;
-    transition: all 0.2s ease;
+  color: #ffffff;
+  background: transparent; /* unused = transparent */
+  border: none;
+  padding: 4px;
+  margin: 0px;
+  border-radius: 0;
+  min-width: 35px;
+  font-weight: 700;
+  transition: all 0.2s ease;
 }
 
 #workspaces button.active {
-    background: rgba(255, 255, 255, 0.1);
-    color: #4ade80;
-    font-weight: 900;
+  background: rgba(255, 255, 255, 0.1);
+  color: #4ade80;
+  font-weight: 900;
 }
 
 #workspaces button:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 #workspaces button.urgent {
-    background: rgba(206, 6, 6, 0.3);
-    color: #ffffff;
+  background: rgba(206, 6, 6, 0.3);
+  color: #ffffff;
 }
 
 /* ── RIGHT-SIDE MODULE BASE ───────────────────────────────────────────── */
@@ -73,32 +74,36 @@ window#waybar {
 #memory,
 #battery,
 #custom-powerBtn {
-    padding: 8px 14px;
-    margin: 0px;
-    min-width: 48px;
-    border-radius: 0px;
-    background: transparent;   /* bg from .modules-right container */
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 500;
-    transition: background 0.2s ease, color 0.2s ease;
+  padding: 8px 12px;
+  margin: 0px;
+  min-width: 48px;
+  border-radius: 0px;
+  background: transparent; /* bg from .modules-right container */
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 /* Clock: 5× wider than the base 48px = 240px */
 #clock {
-    padding: 4px 24px;
-    margin: 0px;
-    min-width: 160px;
-    border-radius: 50px;
-    background: #0a0a0a;
-    color: #ffffff;
-    font-size: 13px;
-    font-weight: 700;
-    transition: background 0.2s ease, color 0.2s ease;
+  padding: 4px 24px;
+  margin: 0px;
+  min-width: 160px;
+  border-radius: 50px;
+  background: #0a0a0a;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 #clock:hover {
-    background: #1e1e1e;
+  background: #1e1e1e;
 }
 
 /* Hover — all modules */
@@ -111,96 +116,97 @@ window#waybar {
 #memory:hover,
 #battery:hover,
 #custom-powerBtn:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
 }
 
 /* ── BATTERY ──────────────────────────────────────────────────────────── */
 #battery.warning {
-    color: #fbbf24;
+  color: #fbbf24;
 }
 
 #battery.critical {
-    color: #f87171;
+  color: #f87171;
 }
 
 #battery.charging {
-    color: #60a5fa;
+  color: #60a5fa;
 }
 
 #battery.full {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* ── NETWORK ──────────────────────────────────────────────────────────── */
 #network.disconnected {
-    color: #f87171;
+  color: #f87171;
 }
 
 /* ── IDLE INHIBITOR ───────────────────────────────────────────────────── */
 #idle_inhibitor {
-    color: #cccccc;
-    border-radius: 9999px 0 0 9999px;  /* pill cap left */
-    padding-left: 18px;
+  color: #cccccc;
+  border-radius: 9999px 0 0 9999px; /* pill cap left */
+  padding-left: 18px;
 }
 
 #idle_inhibitor.activated {
-    color: #4ade80;
+  color: #4ade80;
 }
 
 #idle_inhibitor.deactivated {
-    color: #cccccc;
+  color: #cccccc;
 }
 
 /* ── TRAY ─────────────────────────────────────────────────────────────── */
 #tray {
-    background: transparent;
-    min-width: 48px;
+  background: transparent;
+  min-width: 48px;
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
+  -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
+  -gtk-icon-effect: highlight;
 }
 
 /* ── TOOLTIP ──────────────────────────────────────────────────────────── */
 tooltip {
-    background: rgba(12, 12, 12, 0.97);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 0px;
-    font-size: 15px;
+  background: rgba(12, 12, 12, 0.97);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0px;
+  font-size: 15px;
 }
 
 tooltip label {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* ── CONTEXT MENU ─────────────────────────────────────────────────────── */
 menu {
-    border-radius: 0px;
-    background: #0d0d14;
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
-    font-size: 16px;
-    font-weight: 500;
-    padding: 0px;
+  border-radius: 0px;
+  background: #0d0d14;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+  font-size: 16px;
+  font-weight: 500;
+  padding: 2px;
 }
 
 menuitem {
-    border-radius: 0px;
-    background: transparent;
-    color: #ffffff;
-    padding: 8px 0px;
-    margin: 0px;
-    transition: all 0.2s ease;
+  border-radius: 0px;
+  background: transparent;
+  color: #ffffff;
+  padding: 8px 12px;
+  margin: 0px;
+  transition: all 0.2s ease;
 }
 
 menuitem:hover {
-    background: rgba(0, 0, 8, 0.7);
-    color: #1793d1;
+  background: rgba(0, 0, 8, 0.7);
+  color: #1793d1;
 }
+

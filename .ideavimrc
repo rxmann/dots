@@ -147,7 +147,7 @@ map <leader>ss <Action>(GotoSymbol)
 map <leader>sg <Action>(TextSearchAction)
 
 " search actions
-map <M-S-p> <Action>(GotoAction)
+map <M-S-P> <Action>(GotoAction)
 
 " ============================
 " FIND/REPLACE
