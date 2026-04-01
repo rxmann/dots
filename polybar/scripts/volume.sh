@@ -1,25 +1,19 @@
 #!/bin/bash
+# volume.sh — prints a Nerd Font volume icon based on current sink state
 
-# Get volume percentage
-volume=$(pactl get-sink-volume @DEFAULT_SINK@ | grep -o '[0-9]*%' | head -1 | sed 's/%//')
+volume=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null \
+    | grep -oP '\d+(?=%)' | head -1)
+muted=$(pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null \
+    | grep -oP '(?<=Mute: )\w+')
 
-# Get mute status
-muted=$(pactl get-sink-mute @DEFAULT_SINK@ | grep -o 'yes\|no')
-
-# Define volume icons (similar to waybar)
-if [ "$muted" = "yes" ]; then
-    icon="󰸈"
-    echo "$icon"
+if [ "$muted" = "yes" ] || [ -z "$volume" ]; then
+    echo "󰸈"
 elif [ "$volume" -eq 0 ]; then
-    icon="󰕿"
-    echo "$icon"
+    echo "󰕿"
 elif [ "$volume" -le 33 ]; then
-    icon="󰕿"
-    echo "$icon"
+    echo "󰕿"
 elif [ "$volume" -le 66 ]; then
-    icon="󰖀"
-    echo "$icon"
+    echo "󰖀"
 else
-    icon="󰕾"
-    echo "$icon"
-fi 
+    echo "󰕾"
+fi

@@ -14,8 +14,7 @@ set $lessMod Mod1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# font pango:monospace 12
-font pango:inter 10
+font pango:inter 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -251,21 +250,21 @@ default_floating_border pixel 0
 bindsym $lessMod+Tab workspace back_and_forth
 
 # wallpaper
-exec_always --no-startup-id feh --bg-scale ~/Downloads/solo.jpg
+exec_always --no-startup-id feh --bg-scale ~/Downloads/solo.png
 
 # mouse
 exec_always --no-startup-id xinput --set-prop 12 "libinput Accel Speed" 0
 exec_always --no-startup-id xinput --set-prop 12 "libinput Accel Profile Enabled" 0, 1
 
 # screenshots
-# Select region and save immediately (no GUI)
-bindsym $mainMod+Shift+S exec --no-startup-id flameshot gui -p ~/Pictures/screenshots --raw | xargs -I{} mv {} ~/Pictures/screenshots/
+# Region screenshot: save + copy
+bindsym $mainMod+Shift+S exec --no-startup-id flameshot gui -p ~/Pictures/screenshots -c
 
-# Fullscreen screenshot saved automatically
-bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/screenshots
+# Fullscreen screenshot: save + copy
+bindsym Print exec --no-startup-id flameshot full -p ~/Pictures/screenshots -c
 
-# Region screenshot saved automatically (like active window)
-bindsym Shift+Print exec --no-startup-id flameshot gui -p ~/Pictures/screenshots --raw | xargs -I{} mv {} ~/Pictures/screenshots/
+# Optional: interactive region like active window
+bindsym Shift+Print exec --no-startup-id flameshot gui -p ~/Pictures/screenshots -c
 
 # Gaps configuration 
 set $innerGap 4
@@ -274,7 +273,7 @@ gaps inner $innerGap
 gaps outer $outerGap
 
 # Optional: remove outer gaps when only one window
-# smart_gaps off
+smart_gaps off
 
 # Increase/Decrease gaps
 bindsym $lessMod+minus gaps outer current plus 5
@@ -283,5 +282,7 @@ bindsym $lessMod+equal gaps outer current minus 5
 # Reset gaps
 bindsym $lessMod+Shift+plus gaps inner all set $innerGap; gaps outer all set $outerGap
 
-exec_always --no-startup-id sh -c "pkill polybar; polybar example &"
+# exec_always --no-startup-id sh -c "pkill polybar; polybar example &"
+
+exec_always --no-startup-id ~/projects/dots/polybar/launch.sh
 
