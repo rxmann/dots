@@ -1,16 +1,21 @@
 * {
   font-family:
     "JetBrainsMono Nerd Font", "Inter", "Font Awesome 6 Free", sans-serif;
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 14px;
+  font-weight: 700;
 }
+
 window#waybar {
-  background: black;
+  background: transparent;
   color: #ffffff;
-  font-family: "Inter", "Font Awesome 6 Free";
-  font-size: 12px;
-  font-weight: 500;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+
+  min-height: 2px;
+  transition: min-height 0.2s ease;
+}
+
+/* expand on hover */
+window#waybar:hover {
+  min-height: 28px;
 }
 
 .modules-left,
@@ -29,7 +34,6 @@ window#waybar {
 
 /* ── WORKSPACES (untouched except colors) ─────────────────────────────── */
 #workspaces {
-  /* rounded cap on the right end only — like [      ) */
   border-radius: 0 9999px 9999px 0;
   margin: 0px 0;
   background: #0a0a0a;
@@ -43,14 +47,12 @@ window#waybar {
   margin: 0px;
   border-radius: 0;
   min-width: 32px;
-  font-weight: 500;
   transition: all 0.2s ease;
 }
 
 #workspaces button.active {
   background: rgba(255, 255, 255, 0.1);
   color: #4ade80;
-  font-weight: 700;
 }
 
 #workspaces button:hover {
@@ -76,12 +78,10 @@ window#waybar {
 #custom-powerBtn {
   padding: 4px;
   margin: 0px;
-  min-width: 48px;
+  min-width: 32px;
   border-radius: 0px;
   background: transparent; /* bg from .modules-right container */
   color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
   transition:
     background 0.2s ease,
     color 0.2s ease;
@@ -92,11 +92,9 @@ window#waybar {
   padding: 4px 6px;
   margin: 0px;
   min-width: 120px;
-  /* border-radius: 50px; */
+  border-radius: 50px;
   background: #0a0a0a;
   color: #ffffff;
-  font-size: 14px;
-  font-weight: 700;
   transition:
     background 0.2s ease,
     color 0.2s ease;

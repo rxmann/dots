@@ -2,23 +2,23 @@
 {
   "layer": "top", // waybar at top layer
   "position": "top", // waybar position (top|bottom|left|right)
-  "height": 14, // waybar height (to be removed for auto height)
-  // "width": 1280, // waybar width
+  "exclusive": true,
+  "height": 32, // waybar height (to be removed for auto height)
+  // "width": 1920, // waybar width
   "spacing": 4, // gaps between modules (4px)
   "modules-left": ["hyprland/workspaces"],
   // choose the order of the modules
-  "modules-center": [""],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
     "pulseaudio",
     "network",
-    // "memory",
-    // "cpu",
+    "memory",
+    "cpu",
     "battery",
-    "clock",
+    // "clock",
     "custom/powerBtn",
   ],
-  //modules configuration
   "include": ["~/.config/waybar/modules.json"],
 }
