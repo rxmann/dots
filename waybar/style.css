@@ -1,8 +1,8 @@
 * {
   font-family:
     "JetBrainsMono Nerd Font", "Inter", "Font Awesome 6 Free", sans-serif;
-  font-size: 14px;
-  font-weight: 700;
+  font-size: 10px;
+  font-weight: 600;
 }
 
 window#waybar {
@@ -26,33 +26,60 @@ window#waybar:hover {
 
 /* Right section: solid dark wrapper — kills transparent gaps between modules */
 .modules-right {
-  margin: 0;
-  padding: 0px;
-  background: #0a0a0a;
-  border-radius: 9999px 0 0 9999px; /* pill cap on the left entry */
+  /* Hex equivalent is #0a0a0a but at 75% opacity */
+  background: rgba(10, 10, 10, 0.75);
+  border-radius: 9999px 0 0 9999px;
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle highlight edge */
+  border-right: none;
 }
 
 /* ── WORKSPACES (untouched except colors) ─────────────────────────────── */
 #workspaces {
+  background: rgba(10, 10, 10, 0.75);
   border-radius: 0 9999px 9999px 0;
-  margin: 0px 0;
-  background: #0a0a0a;
+  border: 0px solid rgba(255, 255, 255, 0.08);
+  border-left: none;
+}
+
+.modules-right,
+#workspaces {
+  background: rgba(10, 10, 10, 0.75);
+  /* Use min-height instead of height */
+  min-height: 24px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0;
 }
 
 #workspaces button {
   color: #ffffff;
-  background: transparent; /* unused = transparent */
+  background: transparent;
   border: none;
-  padding: 2px;
   margin: 0px;
-  border-radius: 0;
-  min-width: 32px;
-  transition: all 0.2s ease;
+  padding: 0px 6px;
+  min-width: 24px;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 24px;
+}
+
+#workspaces button.empty {
+  color: #585b70; /* A dim hex color */
+}
+
+#workspaces button.occupied {
+  color: #f9e2af;
+  text-shadow: 0 0 4px rgba(249, 226, 175, 0.5); /* Adds a subtle glow */
 }
 
 #workspaces button.active {
-  background: rgba(255, 255, 255, 0.1);
-  color: #4ade80;
+  background: rgba(74, 222, 128, 0.25);
+  color: #ffffff;
+  text-shadow:
+    0 0 8px rgba(74, 222, 128, 0.8),
+    0 0 12px rgba(74, 222, 128, 0.4);
+  box-shadow: inset 0 0 10px rgba(74, 222, 128, 0.3);
+  transition: all 0.3s ease-in-out;
 }
 
 #workspaces button:hover {
@@ -76,32 +103,32 @@ window#waybar:hover {
 #memory,
 #battery,
 #custom-powerBtn {
-  padding: 4px;
+  padding-left: 4px;
+  padding-right: 4px;
   margin: 0px;
-  min-width: 32px;
   border-radius: 0px;
   background: transparent; /* bg from .modules-right container */
   color: #ffffff;
   transition:
     background 0.2s ease,
     color 0.2s ease;
+  font-size: 12px; /* Slightly larger to match the new workspace scale */
+  padding: 0 6px;
+  min-width: 28px;
+  min-height: 24px;
 }
 
 /* Clock: 5× wider than the base 48px = 240px */
 #clock {
-  padding: 4px 6px;
-  margin: 0px;
-  min-width: 120px;
-  border-radius: 50px;
-  background: #0a0a0a;
-  color: #ffffff;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 0;
+  padding: 0 15px;
+  border-left: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 #clock:hover {
-  background: #1e1e1e;
+  /* Brighter glass effect on hover */
+  background: rgba(255, 255, 255, 0.1);
 }
 
 /* Hover — all modules */
@@ -172,38 +199,37 @@ window#waybar:hover {
 /* ── TOOLTIP ──────────────────────────────────────────────────────────── */
 tooltip {
   background: rgba(12, 12, 12, 0.97);
-  color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 0px;
-  font-size: 15px;
 }
 
+/* Target the actual text label inside the tooltip */
 tooltip label {
   color: #ffffff;
+  font-size: 16px; /* Adjusted to a readable size */
+  padding: 8px;
 }
 
 /* ── CONTEXT MENU ─────────────────────────────────────────────────────── */
 menu {
-  border-radius: 0px;
   background: #0d0d14;
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  font-family: "JetBrainsMono Nerd Font", "Font Awesome 6 Free";
+  padding: 4px;
+}
+
+/* This is the magic fix: target the label inside the menuitem */
+menu menuitem label {
   font-size: 16px;
-  font-weight: 500;
-  padding: 2px;
+  font-weight: 600;
+  padding: 4px 8px;
 }
 
 menuitem {
-  border-radius: 0px;
-  background: transparent;
-  color: #ffffff;
-  padding: 8px 12px;
-  margin: 0px;
+  padding: 4px; /* Give the items some room to breathe */
   transition: all 0.2s ease;
 }
 
 menuitem:hover {
-  background: rgba(0, 0, 8, 0.7);
-  color: #1793d1;
+  background: rgba(255, 255, 255, 0.1);
+  color: #4ade80; /* Matching your green glow theme */
 }
