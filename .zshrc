@@ -75,9 +75,11 @@ alias gpl='git pull'
 
 # Branching
 alias gb='git branch'
+alias gba='git branch --all'
 alias gco='git checkout'
 alias gcb='git checkout -b'
 alias gm='git merge'
+alias gfp='git fetch --prune'
 
 # Undo last commit: Keeps your changes but "uncommits" them
 alias gundo='git reset --soft HEAD~1'
@@ -85,12 +87,11 @@ alias gundo='git reset --soft HEAD~1'
 alias gca='git commit --amend --no-edit'
 # Pretty Log: View a graphical, colorized timeline of commits
 alias glog="git log --graph --pretty=format:'%C(auto)%h%Creset - %C(white)%s%Creset %C(green)(%ad)%Creset %C(bold blue)<%an>%Creset%C(auto)%d' --date=short"
-# -------------------------------
-# pnpm (optional)
-# -------------------------------
-export PNPM_HOME="$HOME/.local/share/pnpm"
-[[ ":$PATH:" != *":$PNPM_HOME:"* ]] && export PATH="$PNPM_HOME:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
