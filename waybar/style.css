@@ -1,235 +1,107 @@
 * {
   font-family:
     "JetBrainsMono Nerd Font", "Inter", "Font Awesome 6 Free", sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 600;
+  border: none;
+  border-radius: 0;
 }
 
 window#waybar {
-  background: transparent;
+  background: rgba(10, 15, 10, 0.95); /* Very dark forest tint */
   color: #ffffff;
-
-  min-height: 2px;
-  transition: min-height 0.2s ease;
-}
-
-/* expand on hover */
-window#waybar:hover {
-  min-height: 28px;
-}
-
-.modules-left,
-.modules-center {
   margin: 0;
-  padding: 0px;
 }
 
-/* Right section: solid dark wrapper — kills transparent gaps between modules */
-.modules-right {
-  /* Hex equivalent is #0a0a0a but at 75% opacity */
-  background: rgba(10, 10, 10, 0.75);
-  border-radius: 9999px 0 0 9999px;
-  border: 1px solid rgba(255, 255, 255, 0.08); /* Subtle highlight edge */
-  border-right: none;
-}
-
-/* ── WORKSPACES (untouched except colors) ─────────────────────────────── */
+/* ── I3-STYLE GREEN FOREST WORKSPACES ────────────────────────────────── */
 #workspaces {
-  background: rgba(10, 10, 10, 0.75);
-  border-radius: 0 9999px 9999px 0;
-  border: 0px solid rgba(255, 255, 255, 0.08);
-  border-left: none;
-}
-
-.modules-right,
-#workspaces {
-  background: rgba(10, 10, 10, 0.75);
-  /* Use min-height instead of height */
-  min-height: 24px;
-  padding-top: 0px;
-  padding-bottom: 0px;
   margin: 0;
 }
 
 #workspaces button {
+  padding: 0 12px;
   color: #ffffff;
   background: transparent;
-  border: none;
-  margin: 0px;
-  padding: 0px 6px;
-  min-width: 24px;
-  font-size: 14px;
-  font-weight: 600;
-  min-height: 24px;
+  /* Bottom bar indicator */
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
 }
 
-#workspaces button.empty {
-  color: #585b70; /* A dim hex color */
+/* Focused workspace - Forest Green */
+#workspaces button.active {
+  background-color: rgba(74, 222, 128, 0.2); /* Subtle green tint */
+  border-bottom: 3px solid #4ade80; /* Bright Green */
+  color: #4ade80;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
 }
 
 #workspaces button.occupied {
-  color: #f9e2af;
-  text-shadow: 0 0 4px rgba(249, 226, 175, 0.5); /* Adds a subtle glow */
-}
-
-#workspaces button.active {
-  background: rgba(74, 222, 128, 0.25);
-  color: #ffffff;
-  text-shadow:
-    0 0 8px rgba(74, 222, 128, 0.8),
-    0 0 12px rgba(74, 222, 128, 0.4);
-  box-shadow: inset 0 0 10px rgba(74, 222, 128, 0.3);
-  transition: all 0.3s ease-in-out;
+  color: #a3be8c; /* Muted forest green for occupied */
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-#workspaces button.urgent {
-  background: rgba(206, 6, 6, 0.3);
-  color: #ffffff;
+/* ── RIGHT MODULES (Gaps Fix) ────────────────────────────────────────── */
+.modules-right {
+  margin: 0;
+  padding: 0;
 }
 
-/* ── RIGHT-SIDE MODULE BASE ───────────────────────────────────────────── */
-/* Fixed constant size for all modules */
-#tray,
-#custom-notification,
+/* This targets every module on the right to force them to stick together */
 #idle_inhibitor,
 #pulseaudio,
 #network,
 #cpu,
 #memory,
 #battery,
+#tray,
+#clock,
 #custom-powerBtn {
-  padding-left: 4px;
-  padding-right: 4px;
-  margin: 0px;
-  border-radius: 0px;
-  background: transparent; /* bg from .modules-right container */
-  color: #ffffff;
-  transition:
-    background 0.2s ease,
-    color 0.2s ease;
-  font-size: 12px; /* Slightly larger to match the new workspace scale */
-  padding: 0 6px;
-  min-width: 28px;
-  min-height: 24px;
+  padding: 0 10px;
+  margin: 0; /* Crucial: removes the gap between icons */
+  background: transparent;
+  color: #eeeeee;
+  border-left: 1px solid rgba(255, 255, 255, 0.05); /* Optional: tiny separator */
 }
 
-/* Clock: 5× wider than the base 48px = 240px */
-#clock {
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0;
-  padding: 0 15px;
-  border-left: 1px solid rgba(255, 255, 255, 0.05);
+/* Remove the border from the very first module on the right */
+#idle_inhibitor {
+  border-left: none;
 }
 
-#clock:hover {
-  /* Brighter glass effect on hover */
-  background: rgba(255, 255, 255, 0.1);
+/* ── FOREST ACCENTS ─────────────────────────────────────────────────── */
+
+/* Sound/Idle/Network icons turn green when active */
+#idle_inhibitor.activated {
+  color: #4ade80;
 }
 
-/* Hover — all modules */
-#tray:hover,
-#custom-notification:hover,
+#pulseaudio.muted {
+  color: #f87171;
+}
+
+#battery.charging {
+  color: #4ade80;
+}
+
+/* Hover effect */
 #idle_inhibitor:hover,
 #pulseaudio:hover,
 #network:hover,
 #cpu:hover,
 #memory:hover,
 #battery:hover,
+#clock:hover,
 #custom-powerBtn:hover {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(74, 222, 128, 0.15); /* Greenish hover */
+}
+
+/* ── CLOCK ───────────────────────────────────────────────────────────── */
+#clock {
   color: #ffffff;
-}
-
-/* ── BATTERY ──────────────────────────────────────────────────────────── */
-#battery.warning {
-  color: #fbbf24;
-}
-
-#battery.critical {
-  color: #f87171;
-}
-
-#battery.charging {
-  color: #60a5fa;
-}
-
-#battery.full {
-  color: #ffffff;
-}
-
-/* ── NETWORK ──────────────────────────────────────────────────────────── */
-#network.disconnected {
-  color: #f87171;
-}
-
-/* ── IDLE INHIBITOR ───────────────────────────────────────────────────── */
-#idle_inhibitor {
-  color: #cccccc;
-  border-radius: 9999px 0 0 9999px; /* pill cap left */
-  padding-left: 18px;
-}
-
-#idle_inhibitor.activated {
-  color: #4ade80;
-}
-
-#idle_inhibitor.deactivated {
-  color: #cccccc;
-}
-
-/* ── TRAY ─────────────────────────────────────────────────────────────── */
-#tray {
-  background: transparent;
-  min-width: 48px;
-}
-
-#tray > .passive {
-  -gtk-icon-effect: dim;
-}
-
-#tray > .needs-attention {
-  -gtk-icon-effect: highlight;
-}
-
-/* ── TOOLTIP ──────────────────────────────────────────────────────────── */
-tooltip {
-  background: rgba(12, 12, 12, 0.97);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Target the actual text label inside the tooltip */
-tooltip label {
-  color: #ffffff;
-  font-size: 16px; /* Adjusted to a readable size */
-  padding: 8px;
-}
-
-/* ── CONTEXT MENU ─────────────────────────────────────────────────────── */
-menu {
-  background: #0d0d14;
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 4px;
-}
-
-/* This is the magic fix: target the label inside the menuitem */
-menu menuitem label {
-  font-size: 16px;
-  font-weight: 600;
-  padding: 4px 8px;
-}
-
-menuitem {
-  padding: 4px; /* Give the items some room to breathe */
-  transition: all 0.2s ease;
-}
-
-menuitem:hover {
-  background: rgba(255, 255, 255, 0.1);
-  color: #4ade80; /* Matching your green glow theme */
+  font-weight: 700;
+  padding-left: 15px;
+  padding-right: 15px;
 }
