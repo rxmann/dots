@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top", // waybar at top layer
-  "position": "top", // waybar position (top|bottom|left|right)
+  "position": "bottom", // waybar position (top|bottom|left|right)
   "exclusive": true,
   "height": "auto", // waybar height (to be removed for auto height)
   // "width": 1920, // waybar width

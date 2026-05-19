@@ -102,6 +102,9 @@ map <leader>J <Action>(SplitHorizontally)
 " split vertically
 map <leader>L <Action>(SplitVertically)
 
+" Move current tab to the vertical split on the right
+map <leader>P <Action>(MoveTabRight)
+
 " unsplit
 map <leader>ww <Action>(Unsplit)
 

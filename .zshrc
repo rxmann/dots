@@ -88,6 +88,13 @@ alias gca='git commit --amend --no-edit'
 # Pretty Log: View a graphical, colorized timeline of commits
 alias glog="git log --graph --pretty=format:'%C(auto)%h%Creset - %C(white)%s%Creset %C(green)(%ad)%Creset %C(bold blue)<%an>%Creset%C(auto)%d' --date=short"
 
+
+# Search for matching filenames in the current directory
+foo() {
+    ls -A | grep -i "$1"
+}
+
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
