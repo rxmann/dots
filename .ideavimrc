@@ -163,7 +163,7 @@ map <C-f> <Action>(Find)
 map <C-S-F> <Action>(Replace)
 
 " global search
-map <leader>/ <Action>(FindInPath)
+map <leader>/ <Action>(FindndInPath)
 map <leader>ff <Action>(FindInPath)
 
 " global replace
