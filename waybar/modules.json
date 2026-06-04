@@ -1,11 +1,11 @@
 {
   "custom/arch": {
-    "format": "󰣇",
+    "format": "󰣇 ",
     "tooltip": true,
     "tooltip-format": "btw"
   },
   "hyprland/workspaces": {
-    "all-outputs": true,
+    "all-outputs": false,
     "format": "{icon}",
     // "persistent-workspaces": {
     //   "1": [],

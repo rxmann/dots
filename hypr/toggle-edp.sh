@@ -18,13 +18,13 @@ move_all_workspaces() {
 if hyprctl monitors | grep -q "^Monitor $INTERNAL"; then
     # Switch to external only
     hyprctl keyword monitor "$INTERNAL,disable"
-    hyprctl keyword monitor "$EXTERNAL,1920x1080@120,auto,1"
-    sleep 1 # Allow monitor to initialize
+    hyprctl keyword monitor "$EXTERNAL,1920x1080@144,auto,1"
+    sleep 3 # Allow monitor to initialize
     move_all_workspaces "$EXTERNAL"
 else
     # Switch to internal only
     hyprctl keyword monitor "$EXTERNAL,disable"
     hyprctl keyword monitor "$INTERNAL,1920x1080@60,auto,1"
-    sleep 1 # Allow monitor to initialize
+    sleep 3 # Allow monitor to initialize
     move_all_workspaces "$INTERNAL"
 fi

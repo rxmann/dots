@@ -5,8 +5,8 @@
   "exclusive": true,
   "height": "auto", // waybar height (to be removed for auto height)
   // "width": 1920, // waybar width
-  "spacing": 4, // gaps between modules (4px)
-  "modules-left": ["hyprland/workspaces"],
+  "spacing": 10, // gaps between modules (4px)
+  "modules-left": ["custom/arch", "hyprland/workspaces"],
   // choose the order of the modules
   "modules-center": [""],
   "modules-right": [
