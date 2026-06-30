@@ -8,7 +8,7 @@
   "spacing": 10, // gaps between modules (4px)
   "modules-left": ["custom/arch", "hyprland/workspaces"],
   // choose the order of the modules
-  "modules-center": [""],
+  "modules-center": ["clock"],
   "modules-right": [
     "tray",
     "idle_inhibitor",
@@ -17,7 +17,6 @@
     "memory",
     "cpu",
     "battery",
-    "clock",
     "custom/powerBtn",
   ],
   "include": ["~/.config/waybar/modules.json"],

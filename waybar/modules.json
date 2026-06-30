@@ -111,6 +111,13 @@
     }
   },
   "clock": {
+    "format": "󰃭 {0:%a, %b %d}  󱑂 {0:%I:%M %p}",
+    "tooltip": true,
+    "tooltip-format": "<big>{calendar}</big>",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw"
+  },
+  "clock1": {
     "format": "{:%I:%M %p}",
     "on-click": "swaync-client -t",
     "tooltip": true,

@@ -2,14 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eb0e636f-6ff6-4a3d-a8d1-48693ffb7613" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.ideavimrc" beforeDir="false" afterPath="$PROJECT_DIR$/.ideavimrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hypr/hyprland.conf" beforeDir="false" afterPath="$PROJECT_DIR$/hypr/hyprland.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hypr/monitors.conf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/hypr/toggle-edp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/hypr/toggle-edp.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i3/config" beforeDir="false" afterPath="$PROJECT_DIR$/i3/config" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/i3/extend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/i3/extend.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lazy-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lazy-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/core/keymaps.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/core/keymaps.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nvim/lua/core/options.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/core/options.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waybar/config.jsonc" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/config.jsonc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waybar/modules.json" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/modules.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/waybar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="65" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -18,6 +31,10 @@
   <component name="KubernetesApiProvider">{
   &quot;isMigrated&quot;: true
 }</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -29,6 +46,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
@@ -43,7 +61,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3bd3a6803838-JavaScript-WS-261.22158.274" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.25134.101" />
       </set>
     </attachedChunks>
   </component>

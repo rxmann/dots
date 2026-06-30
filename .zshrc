@@ -89,6 +89,18 @@ alias gca='git commit --amend --no-edit'
 alias glog="git log --graph --pretty=format:'%C(auto)%h%Creset - %C(white)%s%Creset %C(green)(%ad)%Creset %C(bold blue)<%an>%Creset%C(auto)%d' --date=short"
 
 
+
+
+# 1. Middle-ground balanced profile (Runs cooler, safe for battery)
+alias gpu-balanced="echo 700 | sudo tee /sys/class/drm/card1/gt_min_freq_mhz && echo 700 | sudo tee /sys/class/drm/card1/gt_max_freq_mhz"
+
+# 2. Maximum performance profile (Gives 100% power, runs hotter)
+alias gpu-performance="echo 1050 | sudo tee /sys/class/drm/card1/gt_min_freq_mhz && echo 1050 | sudo tee /sys/class/drm/card1/gt_max_freq_mhz"
+
+# 3. Default automatic profile (Returns control back to the Linux kernel)
+alias gpu-auto="echo 350 | sudo tee /sys/class/drm/card1/gt_min_freq_mhz && echo 1050 | sudo tee /sys/class/drm/card1/gt_max_freq_mhz"
+
+
 # Search for matching filenames in the current directory
 foo() {
     ls -A | grep -i "$1"

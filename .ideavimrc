@@ -146,7 +146,7 @@ map <leader>sc <Action>(GotoClass)
 " search symbols
 map <leader>ss <Action>(GotoSymbol)
 " Open the Quick File Structure Popup (Like Ctrl+F12)
-nnoremap <leader>S :action FileStructurePopup<CR>
+nnoremap <leader>ts :action FileStructurePopup<CR>
 
 " search text
 map <leader>sg <Action>(TextSearchAction)
