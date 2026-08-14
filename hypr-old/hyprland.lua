@@ -12,7 +12,7 @@ hl.monitor({
 	output = "",
 	mode = "preferred",
 	position = "0x0",
-	scale = "auto",
+	scale = 1,
 })
 
 hl.monitor({
@@ -49,26 +49,23 @@ hl.env("QT_QPA_PLATFORMTHEME", "qt6ct")
 
 hl.config({
 	general = {
-		gaps_in = 2,
-		gaps_out = 10,
-		border_size = 1,
+		gaps_in = 0,
+		gaps_out = 0,
+		border_size = 0,
 		resize_on_border = true,
 		allow_tearing = false,
 		layout = "dwindle",
 		col = {
-			active_border = {
-				colors = { "rgba(33ccffee)", "rgba(00ff99ee)" },
-				angle = 45,
-			},
 			inactive_border = "rgba(595959aa)",
+			active_border = "rgba(9598b7cc)",
 		},
 	},
 })
 
 hl.config({
 	decoration = {
-		rounding = 8,
-		rounding_power = 8,
+		rounding = 0,
+		rounding_power = 0,
 		active_opacity = 1.0,
 		inactive_opacity = 0.9,
 		shadow = {
@@ -89,7 +86,7 @@ hl.config({
 	},
 })
 
-hl.curve("easy", { type = "spring", mass = 1, stiffness = 500, dampening = 41 })
+hl.curve("easy", { type = "spring", mass = 1, stiffness = 878.5, dampening = 59.29 })
 
 -- FULLSCREEN
 hl.bind("SUPER" .. " + " .. "F", hl.dsp.window.fullscreen())

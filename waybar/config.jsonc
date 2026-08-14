@@ -1,23 +1,185 @@
 // -*- mode: jsonc -*-
 {
-  "layer": "top", // waybar at top layer
-  "position": "top", // waybar position (top|bottom|left|right)
+  "layer": "top",
+  "position": "top",
   "exclusive": true,
-  "height": "auto", // waybar height (to be removed for auto height)
-  // "width": 1920, // waybar width
-  "spacing": 10, // gaps between modules (4px)
+  "height": 36,
+  "spacing": 0,
+  "margin-top": 2,
+  "margin-left": 8,
+  "margin-right": 8,
+  "margin-bottom": 0,
+
   "modules-left": ["custom/arch", "hyprland/workspaces"],
-  // choose the order of the modules
+
   "modules-center": ["clock"],
+
   "modules-right": [
     "tray",
     "idle_inhibitor",
     "pulseaudio",
-    "network",
+    // "network",
     "memory",
     "cpu",
     "battery",
+    "custom/notification",
     "custom/powerBtn",
   ],
-  "include": ["~/.config/waybar/modules.json"],
+
+  // ── LEFT: Arch Icon + Workspaces ─────────────────────────────────────
+  "custom/arch": {
+    "format": "󰣇",
+    "tooltip": true,
+    "tooltip-format": "btw",
+  },
+
+  "hyprland/workspaces": {
+    "all-outputs": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "0",
+      "urgent": "",
+      "default": "",
+    },
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+  },
+
+  // ── CENTER: Clock ─────────────────────────────────────────────────────
+  "clockD": {
+    // "format": "󰃭 {:%a, %b %d}    󱑂 {:%I:%M %p}",
+    "format": "󰃭  {:%a, %b %d    󱑂  %I:%M %p}",
+    "tooltip": true,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+    },
+    "onClick": "",
+  },
+
+  "clock": {
+    "format": "󱑂  {:%I:%M %p}",
+    "format-alt": "󰃭  {:%a, %b %d}   󱑂  {:%I:%M %p}",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "on-scroll": 1,
+      "on-click-right": "mode",
+      "format": {
+        "months": "<span color='#e2e8f0'><b>{}</b></span>",
+        "days": "<span color='#cbd5e1'><b>{}</b></span>",
+        "weekdays": "<span color='#4ade80'><b>{}</b></span>",
+        "today": "<span color='#4ade80'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+
+  "custom/notification": {
+    "format": "󰂚",
+    "tooltip": false,
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+  },
+
+  // ── RIGHT: System Tray ────────────────────────────────────────────────
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": "󰈀",
+    "format-linked": "󰈀",
+    "format-disconnected": "󰖪",
+    "on-click": "sh ~/.config/waybar/scripts/rofi-wifi-menu.sh",
+    "tooltip": true,
+    "tooltip-format": "  {essid}  {signalStrength}%",
+    "tooltip-format-ethernet": "󰈀 {ifname}",
+    "tooltip-format-disconnected": "Disconnected",
+  },
+
+  "pulseaudio": {
+    "format": "{icon}",
+    "format-bluetooth": "󰂰",
+    "format-bluetooth-muted": "󰸈",
+    "format-muted": "󰸈",
+    "format-icons": {
+      "headphone": "󰋋",
+      "headset": "󰋎",
+      "car": "󰄋",
+      "default": ["󰕿", "󰖀", "󰕾"],
+    },
+    "on-click": "pavucontrol",
+    "tooltip": true,
+    "tooltip-format": "󰕾 Volume: {volume}%\n{desc}",
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": "  {percentage}%",
+    "tooltip": true,
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G",
+  },
+
+  "cpu": {
+    "interval": 5,
+    "format": "  {usage}%",
+    "tooltip": true,
+    "tooltip-format": "CPU: {usage}%  Load: {load}",
+  },
+
+  "battery": {
+    "interval": 30,
+    "states": {
+      "full": 95,
+      "good": 75,
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "{icon}",
+    "format-charging": "󰂄",
+    "format-plugged": "󱞜",
+    "format-full": "󰁹",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip": true,
+    "tooltip-format": "⚡ {capacity}%  {timeTo}",
+    "on-click-right": "sh ~/.config/waybar/scripts/power-profiles.sh",
+  },
+
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "󰌵",
+      "deactivated": "󰌶",
+    },
+    "tooltip": true,
+    "tooltip-format": "Idle Inhibitor: {status}",
+  },
+
+  "custom/powerBtn": {
+    "format": "󰐥",
+    "tooltip": true,
+    "tooltip-format": "Power Menu",
+    "on-click": "~/.config/waybar/scripts/powermenu.sh",
+    "menu": "on-click-right",
+    "menu-file": "~/.config/waybar/power_menu.xml",
+    "menu-actions": {
+      "shutdown": "shutdown now",
+      "reboot": "reboot",
+      "logout": "hyprctl dispatch exit",
+      "suspend": "systemctl suspend",
+    },
+  },
 }

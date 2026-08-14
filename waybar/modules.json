@@ -7,18 +7,6 @@
   "hyprland/workspaces": {
     "all-outputs": false,
     "format": "{icon}",
-    // "persistent-workspaces": {
-    //   "1": [],
-    //   "2": [],
-    //   "3": [],
-    //   "4": [],
-    //   "5": [],
-    //   "6": [],
-    //   "7": [],
-    //   "8": [],
-    //   "9": [],
-    //   "10": []
-    // },
     "format-icons": {
       "1": "1",
       "2": "2",
@@ -111,12 +99,17 @@
     }
   },
   "clock": {
-    "format": "󰃭 {0:%a, %b %d}  󱑂 {0:%I:%M %p}",
+    "format": "󰃭 {:%a, %b %d}    󱑂 {:%I:%M %p}",
     "tooltip": true,
-    "tooltip-format": "<big>{calendar}</big>",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1
+    },
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw"
   },
+
   "clock1": {
     "format": "{:%I:%M %p}",
     "on-click": "swaync-client -t",

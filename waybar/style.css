@@ -1,107 +1,256 @@
+/* ══════════════════════════════════════════════════════════════════
+   WAYBAR — Floating Island Style
+   Three separate pill capsules: [Left] [Center] [Right]
+   Accent: Forest Green #4ade80
+   ══════════════════════════════════════════════════════════════════ */
+
+/* ── VARIABLES ──────────────────────────────────────────────────── */
 * {
   font-family:
     "JetBrainsMono Nerd Font", "Inter", "Font Awesome 6 Free", sans-serif;
-  font-size: 10px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 500;
   border: none;
   border-radius: 0;
+  min-height: 0;
 }
 
+/* ── WAYBAR ROOT — fully transparent, no full-width bar ─────────── */
 window#waybar {
-  background: rgba(10, 15, 10, 0.95); /* Very dark forest tint */
-  color: #ffffff;
-  margin: 0;
+  /* background: transparent; */
+  background: rgba(12, 12, 16, 0.92);
+  border-radius: 12px;
+  color: #e2e8f0;
 }
 
-/* ── I3-STYLE GREEN FOREST WORKSPACES ────────────────────────────────── */
+/* ── THE THREE ISLANDS ──────────────────────────────────────────── */
+
+/* Shared island base */
+.modules-left,
+.modules-center,
+.modules-right {
+  background: rgba(12, 12, 16, 0.92);
+  border-radius: 12px;
+  padding: 0 8px;
+  margin: 0;
+
+  /* Soft drop shadow for depth */
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.5),
+    0 1px 0 rgba(255, 255, 255, 0.04) inset;
+}
+
+/* ── ARCH ICON ──────────────────────────────────────────────────── */
+#custom-arch {
+  color: #4ade80;
+  font-size: 16px;
+  padding: 0 10px 0 12px;
+  margin: 0;
+  transition: color 0.2s ease;
+}
+
+#custom-arch:hover {
+  color: #86efac;
+}
+
+/* ── WORKSPACES ─────────────────────────────────────────────────── */
 #workspaces {
   margin: 0;
+  padding: 0 6px 0 2px;
 }
 
 #workspaces button {
-  padding: 0 12px;
-  color: #ffffff;
+  padding: 0 9px;
+  margin: 5px 1px;
+  color: #64748b;
   background: transparent;
-  /* Bottom bar indicator */
-  border-bottom: 3px solid transparent;
-  transition: all 0.2s ease;
+  border: none;
+  font-size: 11px;
+  font-weight: 600;
+  transition: all 0.15s ease;
+  min-width: 28px;
 }
 
-/* Focused workspace - Forest Green */
+/* Active workspace — green pill */
 #workspaces button.active {
-  background-color: rgba(74, 222, 128, 0.2); /* Subtle green tint */
-  border-bottom: 3px solid #4ade80; /* Bright Green */
+  background: rgba(74, 222, 128, 0.18);
   color: #4ade80;
-  text-shadow: 0 0 8px rgba(74, 222, 128, 0.6);
+  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35);
 }
 
+/* Occupied (has windows, not focused) */
 #workspaces button.occupied {
-  color: #a3be8c; /* Muted forest green for occupied */
+  color: #94a3b8;
 }
 
 #workspaces button:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e2e8f0;
+}
+
+/* Urgent workspace */
+#workspaces button.urgent {
+  background: rgba(248, 113, 113, 0.18);
+  color: #f87171;
+  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.35);
+}
+
+/* ── CLOCK ──────────────────────────────────────────────────────── */
+#clock {
+  font-family: "Inter", sans-serif;
+  color: #f1f5f9; /* Crisp, slightly brighter white */
+  font-weight: 400; /* Lighter weight looks cleaner and more modern than 500/600 */
+  font-size: 11.5px; /* Slightly smaller for a compact feel */
+  padding: 0 10px; /* Tighter padding to save space */
+  letter-spacing: -0.01em; /* Modern UI tight tracking */
+  background: rgba(
+    255,
+    255,
+    255,
+    0.03
+  ); /* Extremely subtle inner pill background */
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  margin: 4px 2px; /* Matches your right module spacing */
+}
+
+/* ── RIGHT MODULES — base style ─────────────────────────────────── */
+#tray,
+#network,
+#pulseaudio,
+#memory,
+#cpu,
+#battery,
+#idle_inhibitor,
+#custom-notification,
+#custom-powerBtn {
+  color: #94a3b8;
+  padding: 0 20px;
+  margin: 4px 2px;
+  font-size: 12px;
+  transition: all 0.15s ease;
+  /* border: 1px solid red; */
+}
+
+/* Power button — no separator on last item */
+#custom-powerBtn {
+  border-right: none;
+  border-radius: 0 12px 12px 0;
+  color: #64748b;
+  padding-right: 14px;
+}
+
+/* ── CUSTOM NOTIFICATION ICON ───────────────────────────────────── */
+#custom-notification {
+  font-size: 14px;
+}
+
+#tray {
+  border-radius: 12px 0 0 12px;
+  padding-left: 14px;
+}
+
+/* ── HOVER STATE ────────────────────────────────────────────────── */
+#tray:hover,
+#network:hover,
+#pulseaudio:hover,
+#memory:hover,
+#cpu:hover,
+#clock:hover,
+#battery:hover,
+#idle_inhibitor:hover,
+#custom-notification:hover,
+#custom-powerBtn:hover {
+  color: #4ade80; /* Gentle accent color on hover */
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* ── RIGHT MODULES (Gaps Fix) ────────────────────────────────────────── */
-.modules-right {
-  margin: 0;
-  padding: 0;
+/* ── NETWORK ────────────────────────────────────────────────────── */
+#network {
+  border-radius: 12px 0 0 12px;
+  padding-left: 14px;
 }
 
-/* This targets every module on the right to force them to stick together */
-#idle_inhibitor,
-#pulseaudio,
-#network,
-#cpu,
-#memory,
-#battery,
-#tray,
-#clock,
-#custom-powerBtn {
-  padding: 0 10px;
-  margin: 0; /* Crucial: removes the gap between icons */
-  background: transparent;
-  color: #eeeeee;
-  border-left: 1px solid rgba(255, 255, 255, 0.05); /* Optional: tiny separator */
+#network.disconnected {
+  color: #f87171;
 }
 
-/* Remove the border from the very first module on the right */
-#idle_inhibitor {
-  border-left: none;
+#network.wifi {
+  color: #94a3b8;
 }
 
-/* ── FOREST ACCENTS ─────────────────────────────────────────────────── */
-
-/* Sound/Idle/Network icons turn green when active */
-#idle_inhibitor.activated {
-  color: #4ade80;
-}
-
+/* ── PULSEAUDIO ─────────────────────────────────────────────────── */
 #pulseaudio.muted {
   color: #f87171;
 }
 
-#battery.charging {
+/* ── MEMORY & CPU ───────────────────────────────────────────────── */
+#memory,
+#cpu {
+  font-size: 11px;
+}
+
+#cpu:hover {
   color: #4ade80;
 }
 
-/* Hover effect */
-#idle_inhibitor:hover,
-#pulseaudio:hover,
-#network:hover,
-#cpu:hover,
-#memory:hover,
-#battery:hover,
-#clock:hover,
-#custom-powerBtn:hover {
-  background: rgba(74, 222, 128, 0.15); /* Greenish hover */
+#memory:hover {
+  color: #60a5fa;
 }
 
-/* ── CLOCK ───────────────────────────────────────────────────────────── */
-#clock {
-  color: #ffffff;
-  font-weight: 700;
-  padding-left: 15px;
-  padding-right: 15px;
+/* ── BATTERY ────────────────────────────────────────────────────── */
+#battery.charging,
+#battery.plugged {
+  color: #4ade80;
+}
+
+#battery.full {
+  color: #4ade80;
+}
+
+#battery.warning {
+  color: #fbbf24;
+}
+
+#battery.critical {
+  color: #f87171;
+  animation: battery-critical 1s ease infinite alternate;
+}
+
+@keyframes battery-critical {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+/* ── IDLE INHIBITOR ─────────────────────────────────────────────── */
+#idle_inhibitor.activated {
+  color: #4ade80;
+}
+
+#idle_inhibitor.deactivated {
+  color: #475569;
+}
+
+/* ── POWER BUTTON ───────────────────────────────────────────────── */
+#custom-powerBtn:hover {
+  color: #f87171;
+  background: rgba(248, 113, 113, 0.08);
+}
+
+/* ── TOOLTIP ────────────────────────────────────────────────────── */
+tooltip {
+  background: rgba(12, 12, 16, 0.96);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  color: #e2e8f0;
+  font-size: 11px;
+  padding: 6px 10px;
+}
+
+tooltip label {
+  color: #e2e8f0;
 }
