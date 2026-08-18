@@ -62,3 +62,5 @@ vim.opt.completeopt = "menuone,noselect" -- Better auto-completion menu feel
 vim.opt.shortmess:append("c") -- Suppress completion messages
 vim.opt.iskeyword:append("-")  -- Treat hyphenated words (like my-variable) as single words
 vim.opt.formatoptions:remove({ "c", "r", "o" }) -- Stop auto-commenting new lines
+
+

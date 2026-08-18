@@ -81,7 +81,6 @@ map("v", "p", '"_dP', "Paste over selection without losing register")
 map("n", "<C-d>", "<C-d>zz", "Scroll down and center")
 map("n", "<C-u>", "<C-u>zz", "Scroll up and center")
 
-
 -- Search navigation & center cursor
 map("n", "n", "nzzzv", "Next search match (centered)")
 map("n", "N", "Nzzzv", "Previous search match (centered)")
@@ -93,7 +92,12 @@ map("n", "J", "mzJ`z", "Join line below with cursor intact")
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", "Clear search highlights")
 
 -- Toggle line wrapping
-map("n", "<leader>lw", "<cmd>set wrap!<CR>", "Toggle line wrapping")
+map("n", "<leader>uw", "<cmd>set wrap!<CR>", "Toggle line wrapping")
+
+-- Toggle Diagnostics
+map("n", "<leader>ud", function()
+	vim.diagnostic.enable(not vim.diagnostic.is_enabled({ bufnr = 0 }))
+end, "Toggle Diagnostics")
 
 -- Move lines up/down in Normal mode
 map("n", "<A-j>", "<cmd>m .+1<CR>==", "Move line down")
@@ -121,9 +125,16 @@ end, "Go to next diagnostic")
 map("n", "<leader>d", vim.diagnostic.open_float, "Open floating diagnostic")
 map("n", "<leader>q", vim.diagnostic.setloclist, "Open diagnostics location list")
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<CR>", { noremap = true, silent = true, desc = "Quit Neovim" })
-vim.keymap.set("n", "<leader>cs", "<cmd>source $MYVIMRC<CR>", { desc = "Source $MYVIMRC" })
+vim.keymap.set("n", "<leader>scc", "<cmd>restart<CR>", { desc = ":RESTART" })
+
+map({ "n", "v" }, "<leader>cf", function()
+	require("conform").format({
+		async = true,
+		lsp_fallback = true,
+	})
+end, "Format")
 
 -- Using <leader>th for Theme
-vim.keymap.set("n", "<leader>th", function()
-  require("telescope.builtin").colorscheme({ enable_preview = true })
+vim.keymap.set("n", "<leader>cs", function()
+	require("telescope.builtin").colorscheme({ enable_preview = true })
 end, { desc = "Select colorscheme" })

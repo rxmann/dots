@@ -97,18 +97,8 @@ window#waybar {
 
 /* ── CLOCK ──────────────────────────────────────────────────────── */
 #clock {
-  font-family: "Inter", sans-serif;
-  color: #f1f5f9; /* Crisp, slightly brighter white */
-  font-weight: 400; /* Lighter weight looks cleaner and more modern than 500/600 */
-  font-size: 11.5px; /* Slightly smaller for a compact feel */
   padding: 0 10px; /* Tighter padding to save space */
   letter-spacing: -0.01em; /* Modern UI tight tracking */
-  background: rgba(
-    255,
-    255,
-    255,
-    0.03
-  ); /* Extremely subtle inner pill background */
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 8px;
   margin: 4px 2px; /* Matches your right module spacing */
