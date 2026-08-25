@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="eb0e636f-6ff6-4a3d-a8d1-48693ffb7613" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.ideavimrc" beforeDir="false" afterPath="$PROJECT_DIR$/.ideavimrc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/hypr/hyprland.conf" beforeDir="false" afterPath="$PROJECT_DIR$/hypr/hyprland.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hypr/toggle-edp.sh" beforeDir="false" afterPath="$PROJECT_DIR$/hypr/toggle-edp.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i3/config" beforeDir="false" afterPath="$PROJECT_DIR$/i3/config" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/i3/extend.sh" beforeDir="false" afterPath="$PROJECT_DIR$/i3/extend.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/lazy-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lazy-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/lua/core/keymaps.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/core/keymaps.lua" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nvim/lua/core/options.lua" beforeDir="false" afterPath="$PROJECT_DIR$/nvim/lua/core/options.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tmux/.tmux.conf" beforeDir="false" afterPath="$PROJECT_DIR$/tmux/.tmux.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waybar/config.jsonc" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/config.jsonc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/waybar/modules.json" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/modules.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waybar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -43,25 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/rxman/projects/dots&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.maddyhome.idea.vim.ui.VimEmulationConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "master",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/home/rxman/projects/dots",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.appearance",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-WS-261.25134.101" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
       </set>
     </attachedChunks>
   </component>
@@ -73,6 +75,7 @@
       <option name="presentableId" value="Default" />
       <updated>1772984899675</updated>
       <workItem from="1772984901626" duration="187000" />
+      <workItem from="1787542858617" duration="510000" />
     </task>
     <servers />
   </component>

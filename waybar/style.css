@@ -18,8 +18,8 @@
 /* ── WAYBAR ROOT — fully transparent, no full-width bar ─────────── */
 window#waybar {
   /* background: transparent; */
-  background: rgba(12, 12, 16, 0.92);
-  border-radius: 12px;
+  /* background: rgba(12, 12, 16, 0.92); */
+  /* border-radius: 12px; */
   color: #e2e8f0;
 }
 
@@ -29,15 +29,10 @@ window#waybar {
 .modules-left,
 .modules-center,
 .modules-right {
-  background: rgba(12, 12, 16, 0.92);
+  /* background: rgba(12, 12, 16, 0.92); */
   border-radius: 12px;
-  padding: 0 8px;
+  padding: 0px;
   margin: 0;
-
-  /* Soft drop shadow for depth */
-  box-shadow:
-    0 4px 16px rgba(0, 0, 0, 0.5),
-    0 1px 0 rgba(255, 255, 255, 0.04) inset;
 }
 
 /* ── ARCH ICON ──────────────────────────────────────────────────── */
