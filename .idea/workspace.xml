@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb0e636f-6ff6-4a3d-a8d1-48693ffb7613" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.scripts/.tmux-reports-layout.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hypr/hyprland.conf" beforeDir="false" afterPath="$PROJECT_DIR$/hypr/hyprland.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kitty/kitty.conf" beforeDir="false" afterPath="$PROJECT_DIR$/kitty/kitty.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tmux/.tmux.conf" beforeDir="false" afterPath="$PROJECT_DIR$/tmux/.tmux.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waybar/config.jsonc" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/config.jsonc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waybar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/style.css" afterDir="false" />
@@ -17,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="65" />
+    <option name="cachedIndexableFilesCount" value="96" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -48,15 +49,19 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "master",
     "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "junie.plugin.stays.banner.dismissed": "true",
     "last_opened_file_path": "/home/rxman/projects/dots",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "editor.preferences.appearance",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -113,6 +118,11 @@
               </option>
               <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
             </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
           </value>
         </entry>
       </map>
