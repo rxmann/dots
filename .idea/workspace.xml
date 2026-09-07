@@ -5,10 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb0e636f-6ff6-4a3d-a8d1-48693ffb7613" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.scripts/.tmux-reports-layout.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kitty/kitty.conf" beforeDir="false" afterPath="$PROJECT_DIR$/kitty/kitty.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tmux/.tmux.conf" beforeDir="false" afterPath="$PROJECT_DIR$/tmux/.tmux.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waybar/config.jsonc" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/config.jsonc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/waybar/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/waybar/style.css" afterDir="false" />
     </list>
@@ -60,7 +57,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "com.maddyhome.idea.vim.ui.VimEmulationConfigurable",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -68,7 +65,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.9437.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-WS-262.10315.144" />
       </set>
     </attachedChunks>
   </component>

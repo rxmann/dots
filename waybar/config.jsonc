@@ -1,10 +1,9 @@
 // -*- mode: jsonc -*-
 {
   "layer": "top",
-  "position": "right",
-  "orientation": "vertical",
+  "position": "bottom",
   "exclusive": true,
-  "width": 48,
+  "height": 36,
   "spacing": 0,
   "margin-top": 0,
   "margin-left": 0,
@@ -56,30 +55,9 @@
   },
 
   // ── CENTER: Clock ─────────────────────────────────────────────────────
-  // "clock": {
-  //   "interval": 1,
-  //   "format": "󱑂  {:%I:%M:%S %p}",
-  //   "tooltip-format": "<tt><big>{calendar}</big></tt>",
-  //   "calendar": {
-  //     "mode": "month",
-  //     "mode-mon-col": 3,
-  //     "format": {
-  //       "months": "<span color='#e2e8f0'><b>{}</b></span>",
-  //       "days": "<span color='#cbd5e1'><b>{}</b></span>",
-  //       "weekdays": "<span color='#4ade80'><b>{}</b></span>",
-  //       "today": "<span color='#4ade80'><b><u>{}</u></b></span>",
-  //     },
-  //   },
-  //   "actions": {
-  //     "on-click-right": "mode",
-  //     "on-scroll-up": "shift_up",
-  //     "on-scroll-down": "shift_down",
-  //   },
-  // },
-
   "clock": {
     "interval": 1,
-    "format": "{:%I\n%M\n%p}",
+    "format": "󱑂  {:%I:%M:%S %p}",
     "tooltip-format": "<tt><big>{calendar}</big></tt>",
     "calendar": {
       "mode": "month",
@@ -136,17 +114,15 @@
 
   "memory": {
     "interval": 5,
-    "format": "\n{percentage}%",
+    "format": "  {percentage}%",
     "tooltip": true,
-    "justify": "center",
     "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G",
   },
 
   "cpu": {
     "interval": 5,
-    "format": "\n{usage}%",
+    "format": "  {usage}%",
     "tooltip": true,
-    "justify": "center",
     "tooltip-format": "CPU: {usage}%  Load: {load}",
   },
 
