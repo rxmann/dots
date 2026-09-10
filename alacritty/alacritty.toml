@@ -1,0 +1,29 @@
+[font]
+normal = { family = "JetBrainsMono Nerd Font" }
+size = 10
+
+[window]
+opacity = 0.90
+decorations = "None"
+padding = { x = 0, y = 0 }
+
+[cursor]
+style = { shape = "Beam", blinking = "On" }
+
+[selection]
+save_to_clipboard = true
+
+[scrolling]
+history = 20000
+
+[keyboard]
+bindings = [
+    { key = "PageUp", action = "ScrollPageUp" },
+    { key = "PageDown", action = "ScrollPageDown" },
+    { key = "K", mods = "Control|Shift", action = "ClearHistory" },
+
+    { key = "+", mods = "Control", action = "IncreaseFontSize" },
+    { key = "=", mods = "Control", action = "IncreaseFontSize" },
+    { key = "-", mods = "Control", action = "DecreaseFontSize" },
+    { key = "0", mods = "Control", action = "ResetFontSize" },
+]
