@@ -7,7 +7,7 @@ let maplocalleader="\\"
 " BASIC VIM SETTINGS
 " ============================
 
-" sync the Vim clipboard with the OS clipboard
+" sync the Vim clipboard with the OS clipboar
 set clipboard^=unnamed,unnamedplus
 
 " jump between angled brackets

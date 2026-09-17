@@ -1,41 +1,25 @@
-/* ══════════════════════════════════════════════════════════════════
-   WAYBAR — Floating Island Style
-   Three separate pill capsules: [Left] [Center] [Right]
-   Accent: Forest Green #4ade80
-   ══════════════════════════════════════════════════════════════════ */
-
-/* ── VARIABLES ──────────────────────────────────────────────────── */
 * {
   font-family:
     "JetBrainsMono Nerd Font", "Inter", "Font Awesome 6 Free", sans-serif;
-  font-size: 12px;
+  font-size: 10px;
   font-weight: 500;
   border: none;
   border-radius: 0;
   min-height: 0;
 }
 
-/* ── WAYBAR ROOT — fully transparent, no full-width bar ─────────── */
 window#waybar {
-  /* background: transparent; */
-  /* background: rgba(12, 12, 16, 0.92); */
-  /* border-radius: 12px; */
   color: #e2e8f0;
 }
 
-/* ── THE THREE ISLANDS ──────────────────────────────────────────── */
-
-/* Shared island base */
 .modules-left,
 .modules-center,
 .modules-right {
-  /* background: rgba(12, 12, 16, 0.92); */
   border-radius: 12px;
   padding: 0px;
   margin: 0;
 }
 
-/* ── ARCH ICON ──────────────────────────────────────────────────── */
 #custom-arch {
   color: #4ade80;
   font-size: 16px;
@@ -48,7 +32,6 @@ window#waybar {
   color: #86efac;
 }
 
-/* ── WORKSPACES ─────────────────────────────────────────────────── */
 #workspaces {
   margin: 0;
   padding: 0 6px 0 2px;
@@ -66,14 +49,12 @@ window#waybar {
   min-width: 28px;
 }
 
-/* Active workspace — green pill */
 #workspaces button.active {
   background: rgba(74, 222, 128, 0.18);
   color: #4ade80;
   box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35);
 }
 
-/* Occupied (has windows, not focused) */
 #workspaces button.occupied {
   color: #94a3b8;
 }
@@ -83,23 +64,20 @@ window#waybar {
   color: #e2e8f0;
 }
 
-/* Urgent workspace */
 #workspaces button.urgent {
   background: rgba(248, 113, 113, 0.18);
   color: #f87171;
   box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.35);
 }
 
-/* ── CLOCK ──────────────────────────────────────────────────────── */
 #clock {
-  padding: 0 10px; /* Tighter padding to save space */
-  letter-spacing: -0.01em; /* Modern UI tight tracking */
+  padding: 0 10px;
+  letter-spacing: -0.01em;
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 8px;
-  margin: 4px 2px; /* Matches your right module spacing */
+  margin: 4px 2px;
 }
 
-/* ── RIGHT MODULES — base style ─────────────────────────────────── */
 #tray,
 #network,
 #pulseaudio,
@@ -110,24 +88,19 @@ window#waybar {
 #custom-notification,
 #custom-powerBtn {
   color: #94a3b8;
-  padding: 0 20px;
-  margin: 4px 2px;
-  font-size: 12px;
+  padding: 0 12px;
+  font-size: 10px;
   transition: all 0.15s ease;
-  /* border: 1px solid red; */
 }
 
-/* Power button — no separator on last item */
 #custom-powerBtn {
   border-right: none;
   border-radius: 0 12px 12px 0;
   color: #64748b;
-  padding-right: 14px;
 }
 
-/* ── CUSTOM NOTIFICATION ICON ───────────────────────────────────── */
 #custom-notification {
-  font-size: 14px;
+  font-size: 12px;
 }
 
 #tray {
@@ -135,7 +108,6 @@ window#waybar {
   padding-left: 14px;
 }
 
-/* ── HOVER STATE ────────────────────────────────────────────────── */
 #tray:hover,
 #network:hover,
 #pulseaudio:hover,
@@ -146,14 +118,8 @@ window#waybar {
 #idle_inhibitor:hover,
 #custom-notification:hover,
 #custom-powerBtn:hover {
-  color: #4ade80; /* Gentle accent color on hover */
+  color: #4ade80;
   background: rgba(255, 255, 255, 0.05);
-}
-
-/* ── NETWORK ────────────────────────────────────────────────────── */
-#network {
-  border-radius: 12px 0 0 12px;
-  padding-left: 14px;
 }
 
 #network.disconnected {
@@ -164,15 +130,13 @@ window#waybar {
   color: #94a3b8;
 }
 
-/* ── PULSEAUDIO ─────────────────────────────────────────────────── */
 #pulseaudio.muted {
   color: #f87171;
 }
 
-/* ── MEMORY & CPU ───────────────────────────────────────────────── */
 #memory,
 #cpu {
-  font-size: 11px;
+  font-size: 10px;
 }
 
 #cpu:hover {
@@ -183,7 +147,6 @@ window#waybar {
   color: #60a5fa;
 }
 
-/* ── BATTERY ────────────────────────────────────────────────────── */
 #battery.charging,
 #battery.plugged {
   color: #4ade80;
@@ -211,7 +174,6 @@ window#waybar {
   }
 }
 
-/* ── IDLE INHIBITOR ─────────────────────────────────────────────── */
 #idle_inhibitor.activated {
   color: #4ade80;
 }
@@ -220,13 +182,11 @@ window#waybar {
   color: #475569;
 }
 
-/* ── POWER BUTTON ───────────────────────────────────────────────── */
 #custom-powerBtn:hover {
   color: #f87171;
   background: rgba(248, 113, 113, 0.08);
 }
 
-/* ── TOOLTIP ────────────────────────────────────────────────────── */
 tooltip {
   background: rgba(12, 12, 16, 0.96);
   border: 1px solid rgba(255, 255, 255, 0.08);

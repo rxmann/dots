@@ -3,7 +3,7 @@
   "layer": "top",
   "position": "top",
   "exclusive": true,
-  "height": 36,
+  "height": 24,
   "spacing": 0,
   "margin-top": 0,
   "margin-left": 0,
@@ -18,7 +18,7 @@
     "tray",
     "idle_inhibitor",
     "pulseaudio",
-    // "network",
+    "network",
     "memory",
     "cpu",
     "battery",
@@ -114,14 +114,14 @@
 
   "memory": {
     "interval": 5,
-    "format": "  {percentage}%",
+    "format": " {percentage}%",
     "tooltip": true,
     "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G",
   },
 
   "cpu": {
     "interval": 5,
-    "format": "  {usage}%",
+    "format": " {usage}%",
     "tooltip": true,
     "tooltip-format": "CPU: {usage}%  Load: {load}",
   },
