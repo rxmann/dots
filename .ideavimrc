@@ -273,7 +273,7 @@ map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>ww <Action>(SurroundWith)
 
 " soft wrap
-map <leader>sw <Action>(EditorToggleUseSoftWraps)
+map <leader>uw <Action>(EditorToggleUseSoftWraps)
 
 " ============================
 " CODE FORMATTING
@@ -342,6 +342,10 @@ map <leader>ee <Action>(Console.Jdbc.Execute)
 " navigate IDE popups with Ctrl-j/k
 map <C-j> <Action>(EditorDown)
 map <C-k> <Action>(EditorUp)
+
+
+" Toggle inlay hints globally using a shortcut
+map <leader>uh <Action>(ToggleInlayHintsGloballyAction)
 
 " Enable the NERDTree extension
 set nerdtree

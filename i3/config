@@ -67,7 +67,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # Hyprland: ALT+Return
-bindsym $lessMod+Return exec kitty
+bindsym $lessMod+Return exec alacritty
 
 # start menu (rofi)
 # Hyprland: ALT+d
