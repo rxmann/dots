@@ -1,82 +1,112 @@
+/* ==========================================================================
+   WAYBAR MODERN REFRESH - CONFIGURATION
+   ========================================================================== */
+
 * {
   font-family:
     "JetBrainsMono Nerd Font", "Inter", "Font Awesome 6 Free", sans-serif;
-  font-size: 10px;
+  font-size: 11px;
   font-weight: 500;
   border: none;
   border-radius: 0;
   min-height: 0;
 }
 
+/* Global Window Layout */
 window#waybar {
-  color: #e2e8f0;
+  color: #f8fafc;
+  background: transparent; /* Allows floating bar look */
+  transition-property: background-color;
+  transition-duration: 0.2s;
 }
 
+/* Module Container Spacing (Floating Bar Style) */
 .modules-left,
 .modules-center,
 .modules-right {
+  background-color: #111318;
+  border: 0px solid rgba(255, 255, 255, 0.06);
   border-radius: 12px;
-  padding: 0px;
-  margin: 0;
+  padding: 2px 6px;
+  margin: 2px 4px 0px 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
+
+/* ==========================================================================
+   LEFT MODULES: Arch Icon & Workspaces
+   ========================================================================== */
 
 #custom-arch {
-  color: #4ade80;
-  font-size: 16px;
-  padding: 0 10px 0 12px;
-  margin: 0;
-  transition: color 0.2s ease;
-}
-
-#custom-arch:hover {
-  color: #86efac;
+  color: #34d399;
+  font-size: 15px;
+  padding: 0 10px 0 6px;
+  margin-right: 4px;
 }
 
 #workspaces {
   margin: 0;
-  padding: 0 6px 0 2px;
+  padding: 0;
 }
 
 #workspaces button {
-  padding: 0 9px;
-  margin: 5px 1px;
+  padding: 0px 6px;
+  margin: 2px 2px;
   color: #64748b;
-  background: transparent;
-  border: none;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 6px;
   font-size: 11px;
   font-weight: 600;
-  transition: all 0.15s ease;
-  min-width: 28px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  min-width: 24px;
 }
 
 #workspaces button.active {
-  background: rgba(74, 222, 128, 0.18);
-  color: #4ade80;
-  box-shadow: 0 0 0 1px rgba(74, 222, 128, 0.35);
+  background: #34d399;
+  color: #0f172a;
+  border-color: #34d399;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.4);
 }
 
 #workspaces button.occupied {
-  color: #94a3b8;
+  color: #cbd5e1;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 #workspaces button:hover {
-  background: rgba(255, 255, 255, 0.06);
-  color: #e2e8f0;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f8fafc;
 }
 
 #workspaces button.urgent {
-  background: rgba(248, 113, 113, 0.18);
-  color: #f87171;
-  box-shadow: 0 0 0 1px rgba(248, 113, 113, 0.35);
+  background: #f87171;
+  color: #0f172a;
+  border-color: #f87171;
 }
 
+/* ==========================================================================
+   CENTER MODULE: Clock
+   ========================================================================== */
+
 #clock {
-  padding: 0 10px;
-  letter-spacing: -0.01em;
+  color: #f8fafc;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 2px 14px;
   border: 1px solid rgba(255, 255, 255, 0.04);
   border-radius: 8px;
-  margin: 4px 2px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
 }
+
+#clock:hover {
+  background: rgba(255, 255, 255, 0.07);
+  color: #34d399;
+}
+
+/* ==========================================================================
+   RIGHT MODULES: System Controls & Hardware Status
+   ========================================================================== */
 
 #tray,
 #network,
@@ -88,24 +118,10 @@ window#waybar {
 #custom-notification,
 #custom-powerBtn {
   color: #94a3b8;
-  padding: 0 12px;
-  font-size: 10px;
+  padding: 0 8px;
+  margin: 2px 1px;
+  border-radius: 6px;
   transition: all 0.15s ease;
-}
-
-#custom-powerBtn {
-  border-right: none;
-  border-radius: 0 12px 12px 0;
-  color: #64748b;
-}
-
-#custom-notification {
-  font-size: 12px;
-}
-
-#tray {
-  border-radius: 12px 0 0 12px;
-  padding-left: 14px;
 }
 
 #tray:hover,
@@ -113,47 +129,38 @@ window#waybar {
 #pulseaudio:hover,
 #memory:hover,
 #cpu:hover,
-#clock:hover,
 #battery:hover,
 #idle_inhibitor:hover,
-#custom-notification:hover,
-#custom-powerBtn:hover {
-  color: #4ade80;
-  background: rgba(255, 255, 255, 0.05);
+#custom-notification:hover {
+  color: #34d399;
+  background: rgba(255, 255, 255, 0.06);
 }
 
+#custom-notification {
+  font-size: 13px;
+}
+
+/* Status Variations */
 #network.disconnected {
   color: #f87171;
-}
-
-#network.wifi {
-  color: #94a3b8;
 }
 
 #pulseaudio.muted {
   color: #f87171;
 }
 
-#memory,
+#memory {
+  color: #60a5fa;
+}
+
 #cpu {
-  font-size: 10px;
-}
-
-#cpu:hover {
-  color: #4ade80;
-}
-
-#memory:hover {
   color: #60a5fa;
 }
 
 #battery.charging,
-#battery.plugged {
-  color: #4ade80;
-}
-
+#battery.plugged,
 #battery.full {
-  color: #4ade80;
+  color: #34d399;
 }
 
 #battery.warning {
@@ -170,32 +177,47 @@ window#waybar {
     opacity: 1;
   }
   to {
-    opacity: 0.5;
+    opacity: 0.4;
   }
 }
 
 #idle_inhibitor.activated {
-  color: #4ade80;
+  color: #34d399;
 }
 
 #idle_inhibitor.deactivated {
   color: #475569;
 }
 
-#custom-powerBtn:hover {
+/* Power Button Special Styling */
+#custom-powerBtn {
   color: #f87171;
   background: rgba(248, 113, 113, 0.08);
+  margin-left: 4px;
+  padding: 0 10px;
+  border-radius: 8px;
 }
 
+#custom-powerBtn:hover {
+  color: #ffffff;
+  background: #f87171;
+  box-shadow: 0 0 10px rgba(248, 113, 113, 0.4);
+}
+
+/* ==========================================================================
+   TOOLTIPS
+   ========================================================================== */
+
 tooltip {
-  background: rgba(12, 12, 16, 0.96);
+  background: #111318;
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  color: #e2e8f0;
+  border-radius: 10px;
+  color: #f8fafc;
   font-size: 11px;
-  padding: 6px 10px;
+  padding: 8px 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
 }
 
 tooltip label {
-  color: #e2e8f0;
+  color: #f8fafc;
 }
