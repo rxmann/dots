@@ -108,6 +108,7 @@ foo() {
 
 
 export PATH="$PATH:/opt/liquibase"
+export PATH="$PATH:/opt/nvim-"
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
@@ -124,3 +125,4 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME/bin:$PATH" ;;
 esac
 # pnpm end
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
