@@ -1,19 +1,22 @@
 #!/bin/bash
-# volume.sh — prints a Nerd Font volume icon based on current sink state
-
-volume=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null \
-    | grep -oP '\d+(?=%)' | head -1)
-muted=$(pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null \
-    | grep -oP '(?<=Mute: )\w+')
-
-if [ "$muted" = "yes" ] || [ -z "$volume" ]; then
-    echo "󰸈"
-elif [ "$volume" -eq 0 ]; then
-    echo "󰕿"
-elif [ "$volume" -le 33 ]; then
-    echo "󰕿"
-elif [ "$volume" -le 66 ]; then
-    echo "󰖀"
-else
-    echo "󰕾"
-fi
+# volume.sh - event-driven volume module (PulseAudio / PipeWire-pulse), plain white
+print_volume() {
+    local mute vol icon
+    mute=$(pactl get-sink-mute @DEFAULT_SINK@ 2>/dev/null | awk '{print $2}')
+    vol=$(pactl get-sink-volume @DEFAULT_SINK@ 2>/dev/null | grep -oP '\d+(?=%)' | head -1)
+    vol=${vol:-0}
+    if [ "$mute" = "yes" ] || [ "$vol" -eq 0 ]; then
+        icon="󰝟"
+    elif [ "$vol" -lt 34 ]; then
+        icon="󰕿"
+    elif [ "$vol" -lt 67 ]; then
+        icon="󰖀"
+    else icon="󰕾"; fi
+    echo "$icon ${vol}%"
+}
+print_volume
+pactl subscribe 2>/dev/null | while read -r event; do
+    case "$event" in
+    *"'change' on sink "* | *"'change' on server"*) print_volume ;;
+    esac
+done

@@ -1,14 +1,16 @@
 #!/bin/bash
-# launch.sh — kill any running polybar, then start fresh
-# Source this from your i3 config:
-#   exec_always --no-startup-id ~/projects/dots/polybar/launch.sh
+# launch.sh - one identical bar on every connected monitor
+# i3: exec_always --no-startup-id ~/projects/dots/polybar/launch.sh
 
-# Kill existing instances
 killall -q polybar
+while pgrep -u $UID -x polybar >/dev/null; do sleep 0.1; done
 
-# Wait for them to die
-while pgrep -u $UID -x polybar > /dev/null; do sleep 0.1; done
+CONFIG="$HOME/projects/dots/polybar/config.ini"
+PRIMARY=$(xrandr --query | awk '/ connected primary/ {print $1; exit}')
+[ -z "$PRIMARY" ] && PRIMARY=$(xrandr --query | awk '/ connected/ {print $1; exit}')
 
-# Launch bar (config must have [bar/main])
-polybar main --config="$HOME/projects/dots/polybar/config.ini" 2>&1 \
-    | tee -a /tmp/polybar.log & disown
+for m in $(xrandr --query | awk '/ connected/ {print $1}'); do
+    if [ "$m" = "$PRIMARY" ]; then BAR=main; else BAR=secondary; fi
+    MONITOR=$m polybar "$BAR" --config="$CONFIG" 2>&1 | tee -a "/tmp/polybar-$m.log" &
+    disown
+done

@@ -21,7 +21,7 @@ font pango:inter 10
 #font pango:DejaVu Sans Mono 8
 
 # Display mode toggle shortcuts
-bindsym $lessMod+Shift+P exec --no-startup-id ~/.config/i3/extend.sh
+# bindsym $lessMod+Shift+P exec --no-startup-id ~/.config/i3/extend.sh
 bindsym $mainMod+Shift+P exec --no-startup-id ~/.config/i3/toggle_display.sh
 
 
@@ -67,7 +67,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 # Hyprland: ALT+Return
-bindsym $lessMod+Return exec alacritty
+bindsym $lessMod+Return exec kitty 
 
 # start menu (rofi)
 # Hyprland: ALT+d
@@ -267,9 +267,17 @@ bindsym $lessMod+Tab workspace back_and_forth
 # wallpaper
 exec_always --no-startup-id feh --bg-scale ~/Downloads/solo.png
 
+# Night Light 
+exec --no-startup-id redshift
+
 # mouse
 exec_always --no-startup-id xinput --set-prop 12 "libinput Accel Speed" 0
 exec_always --no-startup-id xinput --set-prop 12 "libinput Accel Profile Enabled" 0, 1
+
+
+# Touchpad settings
+exec_always --no-startup-id sh -c 'sleep 2; id=$(xinput list --id-only "MSFT0001:01 06CB:CE2D Touchpad"); [ -n "$id" ] && xinput set-prop "$id" "libinput Tapping Enabled" 1 && xinput set-prop "$id" "libinput Tapping Button Mapping Enabled" 1 0 && xinput set-prop "$id" "libinput Natural Scrolling Enabled" 1 && xinput set-prop "$id" "libinput Accel Profile Enabled" 1 0 && xinput set-prop "$id" "libinput Accel Speed" 0.3'
+
 
 # screenshots
 # Region screenshot: save + copy
@@ -303,7 +311,3 @@ exec --no-startup-id dunst
 
 exec_always --no-startup-id ~/projects/dots/polybar/launch.sh
 
-# Touchpad settings
-exec_always --no-startup-id xinput set-prop 9 "libinput Natural Scrolling Enabled" 1
-exec_always --no-startup-id xinput set-prop 9 "libinput Tapping Enabled" 1
-exec_always --no-startup-id xinput set-prop 9 "libinput Click Method Enabled" 0 1
